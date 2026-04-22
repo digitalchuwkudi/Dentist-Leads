@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
 
   return {
-   base: './', important for Cloudflare Pages
+    base: './', // important for Cloudflare Pages
 
     plugins: [
       react(),
@@ -25,7 +25,6 @@ export default defineConfig(({ mode }) => {
     },
 
     server: {
-      // HMR control (keep as is for AI Studio compatibility)
       hmr: process.env.DISABLE_HMR !== 'true',
     },
   };
