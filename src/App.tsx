@@ -14,7 +14,13 @@ export default function App() {
     <>
       {/* NAV */}
       <nav>
-        <div className="nav-logo">Dentist<span>Leads</span></div>
+        <div className="nav-logo" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: '24px', height: '24px', color: 'var(--teal)' }}>
+            <path d="M12 21c-2.5 0-4-2-4-2s-1-4 0-6c1-2 2.5-3 4-3s3 1 4 3c1 2 0 6 0 6s-1.5 2-4 2z"/>
+            <path d="M10 10V6a2 2 0 0 1 2-2v0a2 2 0 0 1 2 2v4"/>
+          </svg>
+          <div>Dentist<span>Leads</span></div>
+        </div>
         <div className="nav-links">
           <a href="#">Home</a>
           <a href="#services">What we do</a>

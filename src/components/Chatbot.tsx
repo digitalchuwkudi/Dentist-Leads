@@ -161,15 +161,34 @@ FORMATTING RULES:
 2. DO NOT use markdown bolding for headers. Use simple ALL CAPS on a new line (e.g. PRICING).
 3. ALWAYS output links as markdown links. Example: [How It Works](#how).
 
-BUSINESS KNOWLEDGE:
-1. Services & Pricing:
-- Entry System: Turn existing site into a 24/7 engine. $800 setup + $400/mo.
-- Foundation System: Custom website + AI. $1,500 setup + $400/mo.
-- Growth System: Drive high-intent traffic. $1,200 setup + $800/mo + ads.
-- Full Acquisition System: Complete end-to-end. $2,500 setup + $1,500/mo + ads.
+BUSINESS KNOWLEDGE (Use this to answer questions perfectly):
+1. The Core Problem We Solve: Dental websites get traffic but don't convert. Clinics lose patients who visit after-hours/weekends, who have a busy front desk, who leave if questions aren't answered instantly, and who leak out of expensive Google Ads.
 
-If they ask how it works, explain our AI books patients 24/7, then say: "You can see it in action here: [How It Works](#how)".
-Guide users to the [Pricing](#pricing) section or the [Contact](#contact) section.`;
+2. How Our System Works (From Visitor to Booked Patient):
+Targeted Traffic -> AI Engages Instantly on the website -> AI Handles Objections & Qualifies patient intent/urgency -> AI Extracts contact details and sends the full chat to the clinic -> The clinic's team simply calls the warm lead to finalize the booking.
+
+3. Services & Pricing (Upgrades/Tiers):
+- Entry System (AI Conversion Layer): Turn existing site into a 24/7 engine without rebuilding it. Pricing: $800 setup + $400/mo.
+- Foundation System (Custom Site + AI): High-converting custom website perfectly integrated with AI. Pricing: $1,500 setup + $400/mo.
+- Growth System (Patient Demand Engine): We drive high-intent patients via Google/Social ads specifically targeting high-value treatments. Pricing: $1,200 setup + $800/mo + ad spend.
+- Full Acquisition System: The complete end-to-end package (Site + AI + Ads working together seamlessly). Pricing: $2,500 setup + $1,500/mo + ad spend.
+
+4. Return On Investment (ROI):
+One single new patient can pay for the entire system (e.g., Implants are $3k-$5k, Invisalign $2.5k-$4k). We eliminate the "leaky bucket" so they book with us instead of searching for a competitor.
+
+5. Frequently Asked Questions (FAQ):
+- "We already have a site": We can install the AI directly on the current site (Entry System), or build a better converting one.
+- "How quickly will we see results?": AI goes live in 48 hours. Paid ad campaigns take 7-14 days to stabilize.
+- "What if the AI doesn't know something?": We train the AI specifically on the clinic's treatments, pricing, and FAQs. If it doesn't know, it takes the patient's details for follow-up immediately.
+- "Ad Budget needed?": $300-$500/month is enough for a single location to start testing. Ad spend goes directly to Google/Meta.
+- "Long term contracts?": No lock-in contracts. It is strictly month-to-month after the setup fee.
+
+6. Specialist Contact Info:
+- WhatsApp: +2290192206612
+- Email: madudimcjx@gmail.com
+
+If they ask how it works, explain our AI answers questions and books patients 24/7, then say: "You can see it in action here: [How It Works](#how)".
+Guide users to the [Pricing](#pricing) section, the [FAQ](#faq) section, or the [Contact](#contact) section when ready.`;
 
       let response = await ai.models.generateContent({
         model: 'gemini-3-flash-preview',
@@ -188,7 +207,9 @@ Guide users to the [Pricing](#pricing) section or the [Contact](#contact) sectio
            const args = call.args as any;
            
            try {
-             const transcript = messages.map(m => `${m.role === 'model' ? 'AI' : 'USER'}: ${m.content}`).join('\\n\\n') + `\\n\\nUSER: ${userMsg}`;
+             // Split keys properly for FormSubmit to render them beautifully in the email notification.
+             // We use actual \n for newlines so they render correctly, not escaped \\n.
+             const transcript = messages.map(m => `${m.role === 'model' ? 'AI' : 'USER'}: ${m.content}`).join('\n\n') + `\n\nUSER: ${userMsg}`;
              await fetch("https://formsubmit.co/ajax/madudimcjx@gmail.com", {
                method: "POST",
                headers: {
@@ -196,11 +217,12 @@ Guide users to the [Pricing](#pricing) section or the [Contact](#contact) sectio
                  "Accept": "application/json"
                },
                body: JSON.stringify({
-                 name: args.name,
-                 email: args.contactInfo,
                  _subject: `New AI Chat Lead: ${args.name}`,
                  _captcha: "false",
-                 message: `Name: ${args.name}\\nContact: ${args.contactInfo}\\nSummary: ${args.inquirySummary}\\n\\n--- Full Chat Transcript ---\\n\\n${transcript}`
+                 Name: args.name,
+                 Contact: args.contactInfo,
+                 Summary: args.inquirySummary,
+                 Transcript: transcript
                })
              });
              console.log("Lead Sent Successfully to FormSubmit");
@@ -213,7 +235,7 @@ Guide users to the [Pricing](#pricing) section or the [Contact](#contact) sectio
            const fallbackChat = [...chatContents];
            fallbackChat[fallbackChat.length - 1] = { 
                role: 'user', 
-               parts: [{ text: `${userMsg}\\n\\n[SYSTEM INSTRUCTION: Extract the user's name: ${args.name}. The lead was successfully sent to our specialist via FormSubmit. Please thank the user, confirm our specialist will be in touch, and provide the contact options list (including the [Contact Section](#contact) link).]` }] 
+               parts: [{ text: `${userMsg}\n\n[SYSTEM INSTRUCTION: Extract the user's name: ${args.name}. The lead was successfully sent to our specialist via FormSubmit. Please thank the user, confirm our specialist will be in touch, and provide the contact options list (including the specialist's actual WhatsApp/Email, plus the [Contact Section](#contact) link).]` }] 
            };
            
            const followupResponse = await ai.models.generateContent({
