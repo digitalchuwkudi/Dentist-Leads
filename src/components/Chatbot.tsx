@@ -19,7 +19,10 @@ export function Chatbot() {
   const recognitionRef = useRef<any>(null);
   const lastInputMethodRef = useRef<'voice' | 'text'>('text');
   
-  const [ai] = useState(() => new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY }));
+  const [ai] = useState(() => {
+    const apiKey = import.meta.env.VITE_GEMINI_API_KEY || process.env.GEMINI_API_KEY;
+    return new GoogleGenAI({ apiKey: apiKey as string });
+  });
 
   useEffect(() => {
     // 5-Second Delay, Desktop Only, runs EVERY time component mounts (page visit/refresh)
