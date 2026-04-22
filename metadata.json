@@ -1,0 +1,6 @@
+{
+  "name": "Dentist Leads Landing Page",
+  "description": "A landing page for Dentist Leads, a dental lead generation agency, featuring an integrated AI sales agent.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": []
+}
