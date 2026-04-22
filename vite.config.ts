@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
 
   return {
-    base: '/', // important for Cloudflare Pages
+   base: './', important for Cloudflare Pages
 
     plugins: [
       react(),
