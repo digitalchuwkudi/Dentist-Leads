@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { GoogleGenAI, Type, FunctionDeclaration } from '@google/genai';
 import { MessageSquare, X, Send, User, Bot, Loader2, Sparkles, Mic, MicOff } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
@@ -18,11 +17,6 @@ export function Chatbot() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const recognitionRef = useRef<any>(null);
   const lastInputMethodRef = useRef<'voice' | 'text'>('text');
-  
-  const [ai] = useState(() => {
-    const apiKey = import.meta.env.VITE_GEMINI_API_KEY || process.env.GEMINI_API_KEY;
-    return new GoogleGenAI({ apiKey: apiKey as string });
-  });
 
   useEffect(() => {
     // 5-Second Delay, Desktop Only, runs EVERY time component mounts (page visit/refresh)
@@ -133,20 +127,6 @@ export function Chatbot() {
       }));
       chatContents.push({ role: 'user', parts: [{ text: userMsg }] });
 
-      const captureLeadFunction: FunctionDeclaration = {
-        name: "captureLead",
-        description: "Capture the user's contact information when they ask to be contacted by a specialist, and sends an email to the business owner.",
-        parameters: {
-          type: Type.OBJECT,
-          properties: {
-            name: { type: Type.STRING, description: "The name of the user" },
-            contactInfo: { type: Type.STRING, description: "The user's email address or phone number" },
-            inquirySummary: { type: Type.STRING, description: "A brief summary of what the user is looking for" }
-          },
-          required: ["name", "contactInfo", "inquirySummary"]
-        }
-      };
-
       const systemInstruction = `You are the AI receptionist for 'Dentist Leads', a dental patient conversion agency. 
 Your goal is to have a NATURAL, HELPFUL conversation with dental clinic owners or managers. 
 
@@ -193,19 +173,16 @@ One single new patient can pay for the entire system (e.g., Implants are $3k-$5k
 If they ask how it works, explain our AI answers questions and books patients 24/7, then say: "You can see it in action here: [How It Works](#how)".
 Guide users to the [Pricing](#pricing) section, the [FAQ](#faq) section, or the [Contact](#contact) section when ready.`;
 
-      let response = await ai.models.generateContent({
-        model: 'gemini-3-flash-preview',
-        contents: chatContents,
-        config: {
-          systemInstruction,
-          tools: [{ functionDeclarations: [captureLeadFunction] }]
-        }
-      });
+      let response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ contents: chatContents, systemInstruction })
+      }).then(res => res.json());
 
       let replyText = '';
 
-      if (response.functionCalls && response.functionCalls.length > 0) {
-        const call = response.functionCalls[0];
+      if (response.functionCall) {
+        const call = response.functionCall;
         if (call.name === 'captureLead') {
            const args = call.args as any;
            
@@ -241,11 +218,11 @@ Guide users to the [Pricing](#pricing) section, the [FAQ](#faq) section, or the 
                parts: [{ text: `${userMsg}\n\n[SYSTEM INSTRUCTION: Extract the user's name: ${args.name}. The lead was successfully sent to our specialist via FormSubmit. Please thank the user, confirm our specialist will be in touch, and provide the contact options list (including the specialist's actual WhatsApp/Email, plus the [Contact Section](#contact) link).]` }] 
            };
            
-           const followupResponse = await ai.models.generateContent({
-             model: 'gemini-3-flash-preview',
-             contents: fallbackChat,
-             config: { systemInstruction }
-           });
+           const followupResponse = await fetch('/api/chat', {
+             method: 'POST',
+             headers: { 'Content-Type': 'application/json' },
+             body: JSON.stringify({ contents: fallbackChat, systemInstruction })
+           }).then(res => res.json());
            
            replyText = followupResponse.text || "I've sent your details to our team! We'll be in touch soon. Can I help you with anything else?";
         }
