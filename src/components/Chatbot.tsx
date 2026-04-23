@@ -53,6 +53,20 @@ export function Chatbot() {
     return () => window.removeEventListener('open-chatbot', handleOpenChatbot);
   }, []);
 
+  // 2-Minute Inactivity Auto-Close
+  useEffect(() => {
+    let inactivityTimer: NodeJS.Timeout;
+    if (isOpen && messages.length > 0) {
+      // 2 minutes = 120,000 ms
+      inactivityTimer = setTimeout(() => {
+        setIsOpen(false);
+      }, 120000);
+    }
+    return () => {
+      if (inactivityTimer) clearTimeout(inactivityTimer);
+    };
+  }, [messages, isOpen]);
+
   useEffect(() => {
     if (typeof window !== 'undefined' && ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
       const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
@@ -133,11 +147,12 @@ Your goal is to have a NATURAL, HELPFUL conversation with dental clinic owners o
 CONVERSATION FLOW:
 1. Greet them naturally. Do NOT jump straight into a sales pitch.
 2. Only introduce our systems when it directly solves their problem. Briefly list our available services (Entry System, Foundation System, Growth, Full Acquisition) without overwhelming them. Wait to see which one they show interest in before diving deeper.
-3. Keep sentences VERY short (1-2 lines). Avoid long, overwhelming paragraphs. 
+3. Keep sentences VERY short (1-2 lines). Avoid long paragraphs.
 4. Always refer to our business owner as "our specialist".
-5. Instead of just asking to "book a strategy call", ask: "Would you like to contact our specialist?"
-6. If they want to get in touch, provide options (e.g., WhatsApp, Email) and ALWAYS include the [Contact Section](#contact) link for them.
+5. TIMING RULE: Wait until you have had about 4 to 6 exchanges with the user before naturally bringing up contact information. If the conversation needs more time, extend it by a couple more turns before asking.
+6. When asking the user for their name and communication options to capture the lead, you MUST simultaneously offer to give our own contacts (WhatsApp/Email) as well, so the user has the option to choose how they want to connect.
 7. Once they provide their contact details (Name and Email or Phone), you MUST call the 'captureLead' tool to send their details.
+8. At the end of the conversation, after contact details have been successfully exchanged, ALWAYS ask if there is anything else they need help with. If they say no, politely end the chat.
 
 FORMATTING RULES:
 1. Short sentences and paragraphs only.

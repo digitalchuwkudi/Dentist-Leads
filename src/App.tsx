@@ -51,46 +51,67 @@ export default function App() {
       </div>
 
       {/* HERO */}
-      <section className="hero">
-        <div className="hero-eyebrow">AI Patient Acquisition System for Dental Clinics</div>
-        <h1>Turn Every Website Visit Into a <em>Booked Patient</em></h1>
-        <p className="hero-sub">Your website shouldn’t just sit there — it should convert. We install a 24/7 AI system that engages, qualifies, and turns every visitor into a real patient — even after hours, on weekends, or when your front desk is busy.</p>
-        
-        <div style={{ marginTop: '-1rem', marginBottom: '2.5rem', fontSize: '1.05rem', fontWeight: 500, color: 'var(--teal)' }}>
-          <p className="flex items-center justify-center gap-2 max-w-[90%] mx-auto"><ChevronRight size={18} color="var(--teal)" className="shrink-0" /> No missed enquiries. No delayed responses. No lost patients.</p>
+      <section className="hero relative overflow-hidden flex flex-col justify-center items-start text-left bg-transparent">
+        {/* Hardware Accelerated Background Video Container */}
+        <div 
+          className="absolute inset-0 w-full h-full z-0 overflow-hidden" 
+          style={{ transform: 'translateZ(0)', pointerEvents: 'none' }}
+        >
+          <video
+            src="https://res.cloudinary.com/dx41voszq/video/upload/v1776883333/Futuristic_tooth_rotating_202604211749_i8t28t.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute top-1/2 left-1/2 object-cover min-w-full min-h-full"
+            style={{ transform: 'translate(-50%, -50%) scale(1.05)', right: '-10%' }} // scale hides watermark, shifting right gives more left space.
+          />
+          {/* Gradient Overlay to fade into the navy background and provide contrast for text */}
+          <div className="absolute inset-0 z-10 bg-gradient-to-r from-[--navy] via-[--navy]/90 to-transparent md:to-[--navy]/20" />
         </div>
 
-        <div className="hero-actions">
-          <button onClick={() => window.dispatchEvent(new Event('open-chatbot'))} className="btn-hero-ai">
-            <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'right' }}>
-              <span style={{ fontSize: '0.95rem', color: 'var(--white)', fontWeight: 500, lineHeight: 1.2, marginBottom: '3px' }}>Chat with our AI Receptionist</span>
-              <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', lineHeight: 1.2 }}>Get immediate answers 24/7 & priority follow-ups</span>
-            </div>
-            <div className="icon-wrap">
-              <Bot size={22} />
-            </div>
-          </button>
+        <div className="relative z-20 w-full max-w-3xl flex flex-col items-start text-left">
+          <div className="hero-eyebrow">AI Patient Acquisition System for Dental Clinics</div>
+          <h1 className="text-left w-full">Turn Every Website Visit Into a <em>Booked Patient</em></h1>
+          <p className="hero-sub text-left max-w-2xl w-full m-0 mb-10">Your website shouldn’t just sit there — it should convert. We install a 24/7 AI system that engages, qualifies, and turns every visitor into a real patient — even after hours, on weekends, or when your front desk is busy.</p>
           
-          <a href="#how" className="btn-primary" style={{ padding: '1.05rem 2.25rem' }}>
-             See How It Works For Your Clinic <ArrowRight size={18} />
-          </a>
-        </div>
-        <div className="hero-stats">
-          <div>
-            <div className="stat-num">24<span>/7</span></div>
-            <div className="stat-label">AI receptionist, always on</div>
+          <div style={{ marginTop: '-1rem', marginBottom: '2.5rem', fontSize: '1.05rem', fontWeight: 500, color: 'var(--teal)' }} className="w-full">
+            <p className="flex items-center justify-start gap-2 max-w-[90%] m-0"><ChevronRight size={18} color="var(--teal)" className="shrink-0" /> No missed enquiries. No delayed responses. No lost patients.</p>
           </div>
-          <div>
-            <div className="stat-num">0<span>s</span></div>
-            <div className="stat-label">Response time to new enquiries</div>
+
+          <div className="hero-actions flex flex-col sm:flex-row items-center sm:items-start justify-start gap-5 w-full">
+            <button onClick={() => window.dispatchEvent(new Event('open-chatbot'))} className="btn-hero-ai flex-row">
+              <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
+                <span style={{ fontSize: '0.95rem', color: 'var(--white)', fontWeight: 500, lineHeight: 1.2, marginBottom: '3px' }}>Chat with our AI</span>
+                <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', lineHeight: 1.2 }}>Get immediate answers 24/7</span>
+              </div>
+              <div className="icon-wrap order-first mr-3">
+                <Bot size={22} />
+              </div>
+            </button>
+            
+            <a href="#how" className="btn-primary" style={{ padding: '1.05rem 2.25rem' }}>
+               See How It Works <ArrowRight size={18} />
+            </a>
           </div>
-          <div>
-            <div className="stat-num">$4<span>k+</span></div>
-            <div className="stat-label">Value of one converted patient</div>
-          </div>
-          <div>
-            <div className="stat-num">48<span>hrs</span></div>
-            <div className="stat-label">To go live — fully set up</div>
+          
+          <div className="hero-stats mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-left w-full">
+            <div className="flex flex-col items-start">
+              <div className="stat-num">24<span>/7</span></div>
+              <div className="stat-label">AI receptionist, always on</div>
+            </div>
+            <div className="flex flex-col items-start">
+              <div className="stat-num">0<span>s</span></div>
+              <div className="stat-label">Response time to new enquiries</div>
+            </div>
+            <div className="flex flex-col items-start">
+              <div className="stat-num">$4<span>k+</span></div>
+              <div className="stat-label">Value of one converted patient</div>
+            </div>
+            <div className="flex flex-col items-start">
+              <div className="stat-num">48<span>hrs</span></div>
+              <div className="stat-label">To go live — fully set up</div>
+            </div>
           </div>
         </div>
       </section>
