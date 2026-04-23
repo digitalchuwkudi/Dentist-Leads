@@ -18,7 +18,7 @@ export default function App() {
           <img 
             src="https://i.ibb.co/mCLy2twx/Chat-GPT-Image-Apr-22-2026-03-59-53-PM-removebg-preview.png" 
             alt="Dentist Leads" 
-            style={{ height: '64px', width: 'auto', objectFit: 'contain' }} 
+            style={{ height: '86px', width: 'auto', objectFit: 'contain' }} 
           />
         </div>
         <div className="nav-links">
@@ -51,68 +51,75 @@ export default function App() {
       </div>
 
       {/* HERO */}
-      <section className="hero relative overflow-hidden flex flex-col lg:flex-row justify-center items-center lg:items-start text-left bg-transparent pt-32 pb-16 px-6 lg:px-12 w-full" style={{ backgroundColor: 'var(--navy)', minHeight: '100vh' }}>
+      <section className="hero relative overflow-hidden bg-transparent w-full" style={{ minHeight: '100vh', padding: 0 }}>
         
-        {/* Left Column: Text Content */}
-        <div className="relative z-10 w-full lg:w-1/2 flex flex-col items-start text-left pt-10">
-          <div className="hero-eyebrow">AI Patient Acquisition System for Dental Clinics</div>
-          <h1 className="text-left w-full">Turn Every Website Visit Into a <em>Booked Patient</em></h1>
-          <p className="hero-sub text-left max-w-2xl w-full m-0 mb-10">Your website shouldn’t just sit there — it should convert. We install a 24/7 AI system that engages, qualifies, and turns every visitor into a real patient — even after hours, on weekends, or when your front desk is busy.</p>
-          
-          <div style={{ marginTop: '-1rem', marginBottom: '2.5rem', fontSize: '1.05rem', fontWeight: 500, color: 'var(--teal)' }} className="w-full">
-            <p className="flex items-center justify-start gap-2 max-w-[90%] m-0"><ChevronRight size={18} color="var(--teal)" className="shrink-0" /> No missed enquiries. No delayed responses. No lost patients.</p>
-          </div>
+        {/* Background color for the whole section */}
+        <div className="absolute inset-0 z-[-3]" style={{ backgroundColor: 'var(--navy)' }} />
 
-          <div className="hero-actions flex flex-col sm:flex-row items-center sm:items-start justify-start gap-5 w-full">
-            <button onClick={() => window.dispatchEvent(new Event('open-chatbot'))} className="btn-hero-ai flex-row">
-              <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
-                <span style={{ fontSize: '0.95rem', color: 'var(--white)', fontWeight: 500, lineHeight: 1.2, marginBottom: '3px' }}>Chat with our AI</span>
-                <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', lineHeight: 1.2 }}>Get immediate answers 24/7</span>
-              </div>
-              <div className="icon-wrap order-first mr-3">
-                <Bot size={22} />
-              </div>
-            </button>
+        {/* 2-Column Grid */}
+        <div className="mx-auto w-full max-w-[1600px] flex flex-col lg:flex-row relative z-10" style={{ minHeight: '100vh' }}>
+          
+          {/* Left Column: Text */}
+          <div className="w-full lg:w-1/2 flex flex-col justify-center items-start text-left pt-36 pb-16 px-6 lg:pl-12 lg:pr-8">
+            <div className="hero-eyebrow">AI Patient Acquisition System for Dental Clinics</div>
+            <h1 className="text-left w-full">Turn Every Website Visit Into a <em>Booked Patient</em></h1>
+            <p className="hero-sub text-left max-w-2xl w-full m-0 mb-10">Your website shouldn’t just sit there — it should convert. We install a 24/7 AI system that engages, qualifies, and turns every visitor into a real patient — even after hours, on weekends, or when your front desk is busy.</p>
             
-            <a href="#how" className="btn-primary" style={{ padding: '1.05rem 2.25rem' }}>
-               See How It Works <ArrowRight size={18} />
-            </a>
-          </div>
-          
-          <div className="mt-12 grid grid-cols-2 gap-y-8 gap-x-12 text-left w-full max-w-lg">
-            <div className="flex flex-col items-start">
-              <div className="stat-num">24<span>/7</span></div>
-              <div className="stat-label">AI receptionist, always on</div>
+            <div style={{ marginTop: '-1rem', marginBottom: '2.5rem', fontSize: '1.05rem', fontWeight: 500, color: 'var(--teal)' }} className="w-full">
+              <p className="flex items-center justify-start gap-2 max-w-[90%] m-0"><ChevronRight size={18} color="var(--teal)" className="shrink-0" /> No missed enquiries. No delayed responses. No lost patients.</p>
             </div>
-            <div className="flex flex-col items-start">
-              <div className="stat-num">0<span>s</span></div>
-              <div className="stat-label">Response time to new enquiries</div>
-            </div>
-            <div className="flex flex-col items-start">
-              <div className="stat-num">$4<span>k+</span></div>
-              <div className="stat-label">Value of one converted patient</div>
-            </div>
-            <div className="flex flex-col items-start">
-              <div className="stat-num">48<span>hrs</span></div>
-              <div className="stat-label">To go live — fully set up</div>
-            </div>
-          </div>
-        </div>
 
-        {/* Right Column: Hero Video Component */}
-        <div className="relative w-full lg:w-1/2 flex items-center justify-center mt-16 lg:mt-0 lg:h-screen lg:absolute lg:right-0 lg:top-0 h-[400px]">
-          <video
-            src="https://res.cloudinary.com/dx41voszq/video/upload/v1776883333/Futuristic_tooth_rotating_202604211749_i8t28t.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="object-cover w-full h-full lg:absolute lg:inset-0 opacity-80"
-            style={{ 
-              maskImage: 'linear-gradient(to right, transparent, black 25%)',
-              WebkitMaskImage: 'linear-gradient(to right, transparent, black 25%)'
-            }}
-          />
+            <div className="hero-actions flex flex-col sm:flex-row items-center sm:items-start justify-start gap-5 w-full">
+              <button onClick={() => window.dispatchEvent(new Event('open-chatbot'))} className="btn-hero-ai flex-row">
+                <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
+                  <span style={{ fontSize: '0.95rem', color: 'var(--white)', fontWeight: 500, lineHeight: 1.2, marginBottom: '3px' }}>Chat with our AI</span>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', lineHeight: 1.2 }}>Get immediate answers 24/7</span>
+                </div>
+                <div className="icon-wrap order-first mr-3">
+                  <Bot size={22} />
+                </div>
+              </button>
+              
+              <a href="#how" className="btn-primary" style={{ padding: '1.05rem 2.25rem' }}>
+                 See How It Works <ArrowRight size={18} />
+              </a>
+            </div>
+            
+            <div className="mt-12 grid grid-cols-2 gap-y-8 gap-x-12 text-left w-full max-w-lg">
+              <div className="flex flex-col items-start">
+                <div className="stat-num">24<span>/7</span></div>
+                <div className="stat-label">AI receptionist, always on</div>
+              </div>
+              <div className="flex flex-col items-start">
+                <div className="stat-num">0<span>s</span></div>
+                <div className="stat-label">Response time to new enquiries</div>
+              </div>
+              <div className="flex flex-col items-start">
+                <div className="stat-num">$4<span>k+</span></div>
+                <div className="stat-label">Value of one converted patient</div>
+              </div>
+              <div className="flex flex-col items-start">
+                <div className="stat-num">48<span>hrs</span></div>
+                <div className="stat-label">To go live — fully set up</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Video */}
+          <div className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-full flex items-center justify-center overflow-hidden">
+            {/* Visual gradient to blend left edge of video smoothly into background */}
+            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[var(--navy)] to-transparent z-10 hidden lg:block" />
+            
+            <video
+              src="https://res.cloudinary.com/dx41voszq/video/upload/v1776883333/Futuristic_tooth_rotating_202604211749_i8t28t.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover opacity-80"
+              style={{ transform: 'scale(1.1)' }}
+            />
+          </div>
         </div>
       </section>
 
@@ -528,11 +535,11 @@ export default function App() {
       <footer className="site-footer">
         <div className="footer-content">
           <div className="footer-col">
-            <div className="footer-logo" style={{ marginBottom: '1rem' }}>
+            <div className="footer-logo" style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'flex-start', width: '100%' }}>
               <img 
                 src="https://i.ibb.co/mCLy2twx/Chat-GPT-Image-Apr-22-2026-03-59-53-PM-removebg-preview.png" 
                 alt="Dentist Leads" 
-                style={{ height: '64px', width: 'auto', objectFit: 'contain' }} 
+                style={{ height: '64px', width: 'auto', objectFit: 'contain', margin: '0' }} 
               />
             </div>
             <p>We install AI-powered patient acquisition systems that turn every website visit into a booked patient — 24/7, without adding pressure to your front desk.</p>

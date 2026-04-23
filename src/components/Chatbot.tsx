@@ -267,13 +267,13 @@ Guide users to the [Pricing](#pricing) section, the [FAQ](#faq) section, or the 
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-[999] flex flex-col items-end pointer-events-none">
+    <div className="fixed bottom-6 right-6 z-[1005] flex flex-col items-end pointer-events-none">
       
       {/* Chat Window */}
       <div 
         className={`pointer-events-auto w-[380px] sm:w-[400px] bg-[#071324]/80 backdrop-blur-2xl border border-white/10 shadow-2xl rounded-[1.5rem] flex flex-col overflow-hidden transition-all duration-500 ease-out origin-bottom-right transform 
           ${isOpen ? 'scale-100 opacity-100 translate-y-0 mb-6' : 'scale-90 opacity-0 translate-y-10 pointer-events-none absolute bottom-0 right-0'}`}
-        style={{ height: '550px', maxHeight: 'calc(100vh - 100px)' }}
+        style={{ height: '520px', maxHeight: 'calc(100vh - 140px)' }}
       >
         {/* Header */}
         <div className="bg-gradient-to-r from-[rgba(0,194,168,0.15)] to-transparent p-5 border-b border-white/5 flex items-center justify-between relative overflow-hidden">
