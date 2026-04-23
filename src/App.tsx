@@ -51,26 +51,10 @@ export default function App() {
       </div>
 
       {/* HERO */}
-      <section className="hero relative overflow-hidden flex flex-col justify-center items-start text-left bg-transparent" style={{ backgroundColor: 'transparent' }}>
-        {/* Hardware Accelerated Background Video Container */}
-        <div 
-          className="absolute inset-0 w-full h-full overflow-hidden" 
-          style={{ transform: 'translateZ(0)', pointerEvents: 'none', zIndex: 0 }}
-        >
-          <video
-            src="https://res.cloudinary.com/dx41voszq/video/upload/v1776883333/Futuristic_tooth_rotating_202604211749_i8t28t.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute top-1/2 left-1/2 object-cover min-w-full min-h-full opacity-90"
-            style={{ transform: 'translate(-50%, -50%) scale(1.05)', right: '-10%' }}
-          />
-        </div>
-        {/* Gradient Overlay to fade into the navy background and provide contrast for text */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[--navy] via-[--navy]/90 to-transparent md:to-[--navy]/20" style={{ pointerEvents: 'none', zIndex: 1 }} />
-
-        <div className="relative z-10 w-full max-w-3xl flex flex-col items-start text-left">
+      <section className="hero relative overflow-hidden flex flex-col lg:flex-row justify-center items-center lg:items-start text-left bg-transparent pt-32 pb-16 px-6 lg:px-12 w-full" style={{ backgroundColor: 'var(--navy)', minHeight: '100vh' }}>
+        
+        {/* Left Column: Text Content */}
+        <div className="relative z-10 w-full lg:w-1/2 flex flex-col items-start text-left pt-10">
           <div className="hero-eyebrow">AI Patient Acquisition System for Dental Clinics</div>
           <h1 className="text-left w-full">Turn Every Website Visit Into a <em>Booked Patient</em></h1>
           <p className="hero-sub text-left max-w-2xl w-full m-0 mb-10">Your website shouldn’t just sit there — it should convert. We install a 24/7 AI system that engages, qualifies, and turns every visitor into a real patient — even after hours, on weekends, or when your front desk is busy.</p>
@@ -113,6 +97,22 @@ export default function App() {
               <div className="stat-label">To go live — fully set up</div>
             </div>
           </div>
+        </div>
+
+        {/* Right Column: Hero Video Component */}
+        <div className="relative w-full lg:w-1/2 flex items-center justify-center mt-16 lg:mt-0 lg:h-screen lg:absolute lg:right-0 lg:top-0 h-[400px]">
+          <video
+            src="https://res.cloudinary.com/dx41voszq/video/upload/v1776883333/Futuristic_tooth_rotating_202604211749_i8t28t.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="object-cover w-full h-full lg:absolute lg:inset-0 opacity-80"
+            style={{ 
+              maskImage: 'linear-gradient(to right, transparent, black 25%)',
+              WebkitMaskImage: 'linear-gradient(to right, transparent, black 25%)'
+            }}
+          />
         </div>
       </section>
 
