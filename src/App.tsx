@@ -14,12 +14,12 @@ export default function App() {
     <>
       {/* NAV */}
       <nav>
-        <div className="nav-logo" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: '24px', height: '24px', color: 'var(--teal)' }}>
-            <path d="M12 21c-2.5 0-4-2-4-2s-1-4 0-6c1-2 2.5-3 4-3s3 1 4 3c1 2 0 6 0 6s-1.5 2-4 2z"/>
-            <path d="M10 10V6a2 2 0 0 1 2-2v0a2 2 0 0 1 2 2v4"/>
-          </svg>
-          <div>Dentist<span>Leads</span></div>
+        <div className="nav-logo" style={{ display: 'flex', alignItems: 'center' }}>
+          <img 
+            src="https://i.ibb.co/mCLy2twx/Chat-GPT-Image-Apr-22-2026-03-59-53-PM-removebg-preview.png" 
+            alt="Dentist Leads" 
+            style={{ height: '42px', width: 'auto', objectFit: 'contain' }} 
+          />
         </div>
         <div className="nav-links">
           <a href="#">Home</a>
@@ -51,11 +51,11 @@ export default function App() {
       </div>
 
       {/* HERO */}
-      <section className="hero relative overflow-hidden flex flex-col justify-center items-start text-left bg-transparent">
+      <section className="hero relative overflow-hidden flex flex-col justify-center items-start text-left bg-transparent" style={{ backgroundColor: 'transparent' }}>
         {/* Hardware Accelerated Background Video Container */}
         <div 
-          className="absolute inset-0 w-full h-full z-0 overflow-hidden" 
-          style={{ transform: 'translateZ(0)', pointerEvents: 'none' }}
+          className="absolute inset-0 w-full h-full overflow-hidden" 
+          style={{ transform: 'translateZ(0)', pointerEvents: 'none', zIndex: -2 }}
         >
           <video
             src="https://res.cloudinary.com/dx41voszq/video/upload/v1776883333/Futuristic_tooth_rotating_202604211749_i8t28t.mp4"
@@ -63,14 +63,14 @@ export default function App() {
             loop
             muted
             playsInline
-            className="absolute top-1/2 left-1/2 object-cover min-w-full min-h-full"
-            style={{ transform: 'translate(-50%, -50%) scale(1.05)', right: '-10%' }} // scale hides watermark, shifting right gives more left space.
+            className="absolute top-1/2 left-1/2 object-cover min-w-full min-h-full opacity-90"
+            style={{ transform: 'translate(-50%, -50%) scale(1.05)', right: '-10%' }}
           />
-          {/* Gradient Overlay to fade into the navy background and provide contrast for text */}
-          <div className="absolute inset-0 z-10 bg-gradient-to-r from-[--navy] via-[--navy]/90 to-transparent md:to-[--navy]/20" />
         </div>
+        {/* Gradient Overlay to fade into the navy background and provide contrast for text */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[--navy] via-[--navy]/90 to-transparent md:to-[--navy]/20" style={{ pointerEvents: 'none', zIndex: -1 }} />
 
-        <div className="relative z-20 w-full max-w-3xl flex flex-col items-start text-left">
+        <div className="relative z-10 w-full max-w-3xl flex flex-col items-start text-left">
           <div className="hero-eyebrow">AI Patient Acquisition System for Dental Clinics</div>
           <h1 className="text-left w-full">Turn Every Website Visit Into a <em>Booked Patient</em></h1>
           <p className="hero-sub text-left max-w-2xl w-full m-0 mb-10">Your website shouldn’t just sit there — it should convert. We install a 24/7 AI system that engages, qualifies, and turns every visitor into a real patient — even after hours, on weekends, or when your front desk is busy.</p>
@@ -95,7 +95,7 @@ export default function App() {
             </a>
           </div>
           
-          <div className="hero-stats mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-left w-full">
+          <div className="mt-12 grid grid-cols-2 gap-y-8 gap-x-12 text-left w-full max-w-lg">
             <div className="flex flex-col items-start">
               <div className="stat-num">24<span>/7</span></div>
               <div className="stat-label">AI receptionist, always on</div>
@@ -528,7 +528,13 @@ export default function App() {
       <footer className="site-footer">
         <div className="footer-content">
           <div className="footer-col">
-            <div className="footer-logo">Dentist<span>Leads</span></div>
+            <div className="footer-logo" style={{ marginBottom: '1rem' }}>
+              <img 
+                src="https://i.ibb.co/mCLy2twx/Chat-GPT-Image-Apr-22-2026-03-59-53-PM-removebg-preview.png" 
+                alt="Dentist Leads" 
+                style={{ height: '42px', width: 'auto', objectFit: 'contain' }} 
+              />
+            </div>
             <p>We install AI-powered patient acquisition systems that turn every website visit into a booked patient — 24/7, without adding pressure to your front desk.</p>
           </div>
           
