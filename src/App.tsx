@@ -18,7 +18,7 @@ export default function App() {
           <img 
             src="https://i.ibb.co/mCLy2twx/Chat-GPT-Image-Apr-22-2026-03-59-53-PM-removebg-preview.png" 
             alt="Dentist Leads" 
-            style={{ height: '42px', width: 'auto', objectFit: 'contain' }} 
+            style={{ height: '64px', width: 'auto', objectFit: 'contain' }} 
           />
         </div>
         <div className="nav-links">
@@ -55,7 +55,7 @@ export default function App() {
         {/* Hardware Accelerated Background Video Container */}
         <div 
           className="absolute inset-0 w-full h-full overflow-hidden" 
-          style={{ transform: 'translateZ(0)', pointerEvents: 'none', zIndex: -2 }}
+          style={{ transform: 'translateZ(0)', pointerEvents: 'none', zIndex: 0 }}
         >
           <video
             src="https://res.cloudinary.com/dx41voszq/video/upload/v1776883333/Futuristic_tooth_rotating_202604211749_i8t28t.mp4"
@@ -68,7 +68,7 @@ export default function App() {
           />
         </div>
         {/* Gradient Overlay to fade into the navy background and provide contrast for text */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[--navy] via-[--navy]/90 to-transparent md:to-[--navy]/20" style={{ pointerEvents: 'none', zIndex: -1 }} />
+        <div className="absolute inset-0 bg-gradient-to-r from-[--navy] via-[--navy]/90 to-transparent md:to-[--navy]/20" style={{ pointerEvents: 'none', zIndex: 1 }} />
 
         <div className="relative z-10 w-full max-w-3xl flex flex-col items-start text-left">
           <div className="hero-eyebrow">AI Patient Acquisition System for Dental Clinics</div>
@@ -281,9 +281,9 @@ export default function App() {
               <li>Full conversation transcripts</li>
               <li>Basic patient qualification</li>
             </ul>
-            <a href="#contact" className="price-cta">
+            <button onClick={(e) => { e.preventDefault(); window.dispatchEvent(new Event('open-chatbot')); }} className="price-cta">
               Activate AI Conversion <ArrowRight size={16} />
-            </a>
+            </button>
           </div>
 
           <div className="price-card">
@@ -300,9 +300,9 @@ export default function App() {
               <li>Full conversation transcripts</li>
               <li>Conversion optimization built-in</li>
             </ul>
-            <a href="#contact" className="price-cta">
+            <button onClick={(e) => { e.preventDefault(); window.dispatchEvent(new Event('open-chatbot')); }} className="price-cta">
               Start Converting Patients <ArrowRight size={16} />
-            </a>
+            </button>
           </div>
 
           <div className="price-card">
@@ -319,9 +319,9 @@ export default function App() {
               <li>Retargeting (recover lost visitors)</li>
               <li>Monthly optimization & reporting</li>
             </ul>
-            <a href="#contact" className="price-cta">
+            <button onClick={(e) => { e.preventDefault(); window.dispatchEvent(new Event('open-chatbot')); }} className="price-cta">
               Start Getting More Patients <ArrowRight size={16} />
-            </a>
+            </button>
           </div>
 
           <div className="price-card featured">
@@ -338,9 +338,9 @@ export default function App() {
               <li>AI + ads working together</li>
               <li>Priority support + strategy</li>
             </ul>
-            <a href="#contact" className="price-cta">
+            <button onClick={(e) => { e.preventDefault(); window.dispatchEvent(new Event('open-chatbot')); }} className="price-cta">
               Build My Patient System <ArrowRight size={16} />
-            </a>
+            </button>
           </div>
         </div>
 
@@ -532,7 +532,7 @@ export default function App() {
               <img 
                 src="https://i.ibb.co/mCLy2twx/Chat-GPT-Image-Apr-22-2026-03-59-53-PM-removebg-preview.png" 
                 alt="Dentist Leads" 
-                style={{ height: '42px', width: 'auto', objectFit: 'contain' }} 
+                style={{ height: '64px', width: 'auto', objectFit: 'contain' }} 
               />
             </div>
             <p>We install AI-powered patient acquisition systems that turn every website visit into a booked patient — 24/7, without adding pressure to your front desk.</p>
