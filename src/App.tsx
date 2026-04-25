@@ -18,7 +18,7 @@ export default function App() {
           <img 
             src="https://i.ibb.co/mCLy2twx/Chat-GPT-Image-Apr-22-2026-03-59-53-PM-removebg-preview.png" 
             alt="Dentist Leads" 
-            style={{ height: '86px', width: 'auto', objectFit: 'contain' }} 
+            style={{ height: '60px', width: 'auto', objectFit: 'contain' }} 
           />
         </div>
         <div className="nav-links">
@@ -29,7 +29,7 @@ export default function App() {
           <a href="#faq">FAQ</a>
           <a href="#contact">Contact</a>
           <a href="#contact" className="nav-cta" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-            Let's get started <Rocket size={16} />
+            Let's get started <Rocket size={18} />
           </a>
         </div>
         <button className="mobile-menu-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
@@ -46,7 +46,7 @@ export default function App() {
         <a href="#faq" onClick={() => setIsMobileMenuOpen(false)}>FAQ</a>
         <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
         <a href="#contact" className="nav-cta" onClick={() => setIsMobileMenuOpen(false)} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-          Let's get started <Rocket size={16} />
+          Let's get started <Rocket size={18} />
         </a>
       </div>
 
@@ -60,45 +60,45 @@ export default function App() {
         <div className="mx-auto w-full max-w-[1600px] flex flex-col lg:flex-row relative z-10" style={{ minHeight: '100vh' }}>
           
           {/* Left Column: Text */}
-          <div className="w-full lg:w-1/2 flex flex-col justify-center items-start text-left pt-36 pb-16 px-6 lg:pl-12 lg:pr-8">
-            <div className="hero-eyebrow">AI Patient Acquisition System for Dental Clinics</div>
-            <h1 className="text-left w-full">Turn Every Website Visit Into a <em>Booked Patient</em></h1>
-            <p className="hero-sub text-left max-w-2xl w-full m-0 mb-10">Your website shouldn’t just sit there — it should convert. We install a 24/7 AI system that engages, qualifies, and turns every visitor into a real patient — even after hours, on weekends, or when your front desk is busy.</p>
+          <div className="w-full lg:w-1/2 flex flex-col justify-center items-center text-center lg:items-start lg:text-left pt-28 pb-16 px-6 lg:pl-12 lg:pr-8">
+            <div className="hero-eyebrow flex justify-center lg:justify-start w-full">AI Patient Acquisition System for Dental Clinics</div>
+            <h1 className="text-center lg:text-left w-full">Turn Every Website Visit Into a <em>Booked Patient</em></h1>
+            <p className="hero-sub text-center lg:text-left max-w-2xl w-full mx-auto lg:mx-0 m-0 mb-10">Your website shouldn’t just sit there — it should convert. We install a 24/7 AI system that engages, qualifies, and turns every visitor into a real patient — even after hours, on weekends, or when your front desk is busy.</p>
             
-            <div style={{ marginTop: '-1rem', marginBottom: '2.5rem', fontSize: '1.05rem', fontWeight: 500, color: 'var(--teal)' }} className="w-full">
-              <p className="flex items-center justify-start gap-2 max-w-[90%] m-0"><ChevronRight size={18} color="var(--teal)" className="shrink-0" /> No missed enquiries. No delayed responses. No lost patients.</p>
+            <div style={{ marginTop: '-1rem', marginBottom: '2.5rem', fontSize: '1.05rem', fontWeight: 500, color: 'var(--teal)' }} className="w-full flex justify-center lg:justify-start">
+              <p className="flex items-center justify-center lg:justify-start gap-2 w-full m-0 mx-auto lg:mx-0"><ChevronRight size={18} color="var(--teal)" className="shrink-0" /> No missed enquiries. No delayed responses.</p>
             </div>
 
-            <div className="hero-actions flex flex-col sm:flex-row items-center sm:items-start justify-start gap-5 w-full">
+            <div className="hero-actions flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-5 w-full">
               <button onClick={() => window.dispatchEvent(new Event('open-chatbot'))} className="btn-hero-ai flex-row">
                 <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
-                  <span style={{ fontSize: '0.95rem', color: 'var(--white)', fontWeight: 500, lineHeight: 1.2, marginBottom: '3px' }}>Chat with our AI</span>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', lineHeight: 1.2 }}>Get immediate answers 24/7</span>
+                  <span style={{ fontSize: '0.95rem', color: 'var(--white)', fontWeight: 500, lineHeight: 1.2, margin: '2px 0 3px 0' }}>Chat with our AI</span>
+                  <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.2 }}>Get immediate answers 24/7</span>
                 </div>
-                <div className="icon-wrap order-first mr-3">
-                  <Bot size={22} />
+                <div className="icon-wrap ml-3">
+                  <Bot size={18} />
                 </div>
               </button>
               
-              <a href="#how" className="btn-primary" style={{ padding: '1.05rem 2.25rem' }}>
+              <a href="#how" className="btn-primary" style={{ padding: '0.9rem 2rem' }}>
                  See How It Works <ArrowRight size={18} />
               </a>
             </div>
             
-            <div className="mt-12 grid grid-cols-2 gap-y-8 gap-x-12 text-left w-full max-w-lg">
-              <div className="flex flex-col items-start">
+            <div className="mt-12 grid grid-cols-2 gap-y-8 gap-x-12 text-center lg:text-left w-full max-w-lg mx-auto lg:mx-0 justify-items-center lg:justify-items-start">
+              <div className="flex flex-col items-center lg:items-start">
                 <div className="stat-num">24<span>/7</span></div>
                 <div className="stat-label">AI receptionist, always on</div>
               </div>
-              <div className="flex flex-col items-start">
+              <div className="flex flex-col items-center lg:items-start">
                 <div className="stat-num">0<span>s</span></div>
                 <div className="stat-label">Response time to new enquiries</div>
               </div>
-              <div className="flex flex-col items-start">
+              <div className="flex flex-col items-center lg:items-start">
                 <div className="stat-num">$4<span>k+</span></div>
                 <div className="stat-label">Value of one converted patient</div>
               </div>
-              <div className="flex flex-col items-start">
+              <div className="flex flex-col items-center sm:items-start">
                 <div className="stat-num">48<span>hrs</span></div>
                 <div className="stat-label">To go live — fully set up</div>
               </div>
@@ -106,19 +106,35 @@ export default function App() {
           </div>
 
           {/* Right Column: Video */}
-          <div className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-full flex items-center justify-center overflow-hidden">
-            {/* Visual gradient to blend left edge of video smoothly into background */}
-            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[var(--navy)] to-transparent z-10 hidden lg:block" />
-            
-            <video
-              src="https://res.cloudinary.com/dx41voszq/video/upload/v1776883333/Futuristic_tooth_rotating_202604211749_i8t28t.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover opacity-80"
-              style={{ transform: 'scale(1.1)' }}
-            />
+          <div className="w-full lg:w-1/2 relative min-h-[400px] lg:min-h-full flex items-center justify-center p-0 lg:p-6 z-10 overflow-visible mt-10 lg:mt-0">
+            {/* Faint radial teal glow behind the video */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] max-w-[600px] max-h-[600px] bg-[#00c2a8] rounded-full blur-[120px] opacity-20 pointer-events-none" />
+
+            {/* Video Container with Feathered Edges */}
+            <div className="relative w-full max-w-[600px] aspect-square flex items-center justify-center pointer-events-none"
+                 style={{
+                    maskImage: 'radial-gradient(circle at center, black 40%, transparent 65%)',
+                    WebkitMaskImage: 'radial-gradient(circle at center, black 40%, transparent 65%)'
+                 }}>
+              
+              <video
+                src="https://res.cloudinary.com/dx41voszq/video/upload/q_auto,f_auto,vc_auto/v1776962211/Futuristic_tooth_rotating_202604230934_gmuzes.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                className="absolute inset-0 w-full h-full object-cover"
+                style={{
+                  transform: 'scale(1.4) translateX(-5%) translateY(1%)',
+                  objectPosition: 'center',
+                  background: 'transparent'
+                }} 
+              />
+              
+              {/* Additional overlay to help hide any edge watermarks */}
+              <div className="absolute bottom-0 right-0 w-40 h-24 bg-[#071324] mix-blend-normal blur-2xl z-10 pointer-events-none" />
+            </div>
           </div>
         </div>
       </section>
@@ -129,7 +145,7 @@ export default function App() {
         <h2>Your Website Gets Traffic —<br /><em>But Doesn’t Convert</em></h2>
         <p className="section-intro">Every day, potential patients visit your website ready to book.<br />But instead of becoming appointments, they:</p>
 
-        <div className="problem-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
+        <div className="problem-grid">
           <div className="problem-card">
             <div className="problem-icon"><TrendingDown size={20} /></div>
             <h3>Leave without taking action</h3>
@@ -153,8 +169,23 @@ export default function App() {
         </div>
       </section>
 
+      <div className="relative w-full">
+        {/* Sticky Background Video Layer */}
+        <div className="absolute inset-0 -z-10 pointer-events-none">
+          <div className="sticky top-0 w-full h-[100vh] overflow-hidden">
+             <video 
+               src="https://res.cloudinary.com/dx41voszq/video/upload/v1777079142/video_1776967272777028_ng5uji.mp4" 
+               autoPlay loop muted playsInline 
+               className="absolute inset-0 w-full h-full object-cover blur-[20px] opacity-[0.15]" 
+             />
+             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a1628]/70 to-[#0a1628] z-10" />
+          </div>
+        </div>
+
+        <div className="relative z-20">
+
       {/* WHAT WE DO */}
-      <section id="services" style={{ background: 'var(--navy-mid)' }}>
+      <section id="services">
         <span className="section-tag">What we do</span>
         <h2>We Turn Interest Into<br /><em>Appointments — Automatically</em></h2>
         <p className="section-intro">We install a complete AI Patient Acquisition System into your clinic that:</p>
@@ -194,7 +225,7 @@ export default function App() {
         
         <div className="services-three" style={{ marginTop: '3.5rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', alignItems: 'stretch' }}>
            
-           <div className="problem-card">
+           <div className="problem-card grainy-card">
               <h3 style={{ color: 'var(--teal)', fontSize: '1.2rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <Moon size={18} /> After-hours visits
               </h3>
@@ -202,7 +233,7 @@ export default function App() {
               <p style={{ marginTop: '1rem', color: 'var(--white)', fontWeight: 500, display: 'flex', alignItems: 'flex-start', gap: '8px', textAlign: 'left' }}><ChevronRight size={18} color="var(--teal)" className="shrink-0 mt-0.5" /> We respond instantly and secure their details</p>
            </div>
 
-           <div className="problem-card">
+           <div className="problem-card grainy-card">
               <h3 style={{ color: 'var(--teal)', fontSize: '1.2rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <PhoneCall size={18} /> Busy front desk
               </h3>
@@ -210,7 +241,7 @@ export default function App() {
               <p style={{ marginTop: '1rem', color: 'var(--white)', fontWeight: 500, display: 'flex', alignItems: 'flex-start', gap: '8px', textAlign: 'left' }}><ChevronRight size={18} color="var(--teal)" className="shrink-0 mt-0.5" /> AI handles conversations in real time</p>
            </div>
 
-           <div className="problem-card">
+           <div className="problem-card grainy-card">
               <h3 style={{ color: 'var(--teal)', fontSize: '1.2rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <MessageCircle size={18} /> Cold enquiries
               </h3>
@@ -218,7 +249,7 @@ export default function App() {
               <p style={{ marginTop: '1rem', color: 'var(--white)', fontWeight: 500, display: 'flex', alignItems: 'flex-start', gap: '8px', textAlign: 'left' }}><ChevronRight size={18} color="var(--teal)" className="shrink-0 mt-0.5" /> AI builds trust and moves them toward booking</p>
            </div>
 
-           <div className="problem-card">
+           <div className="problem-card grainy-card">
               <h3 style={{ color: 'var(--teal)', fontSize: '1.2rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <TrendingDown size={18} /> Paid traffic leaks
               </h3>
@@ -289,7 +320,7 @@ export default function App() {
               <li>Basic patient qualification</li>
             </ul>
             <button onClick={(e) => { e.preventDefault(); window.dispatchEvent(new Event('open-chatbot')); }} className="price-cta">
-              Activate AI Conversion <ArrowRight size={16} />
+              Activate AI Conversion <ArrowRight size={18} />
             </button>
           </div>
 
@@ -308,7 +339,7 @@ export default function App() {
               <li>Conversion optimization built-in</li>
             </ul>
             <button onClick={(e) => { e.preventDefault(); window.dispatchEvent(new Event('open-chatbot')); }} className="price-cta">
-              Start Converting Patients <ArrowRight size={16} />
+              Start Converting Patients <ArrowRight size={18} />
             </button>
           </div>
 
@@ -327,7 +358,7 @@ export default function App() {
               <li>Monthly optimization & reporting</li>
             </ul>
             <button onClick={(e) => { e.preventDefault(); window.dispatchEvent(new Event('open-chatbot')); }} className="price-cta">
-              Start Getting More Patients <ArrowRight size={16} />
+              Start Getting More Patients <ArrowRight size={18} />
             </button>
           </div>
 
@@ -346,12 +377,12 @@ export default function App() {
               <li>Priority support + strategy</li>
             </ul>
             <button onClick={(e) => { e.preventDefault(); window.dispatchEvent(new Event('open-chatbot')); }} className="price-cta">
-              Build My Patient System <ArrowRight size={16} />
+              Build My Patient System <ArrowRight size={18} />
             </button>
           </div>
         </div>
 
-        <div style={{ background: 'var(--navy-mid)', border: '1px solid rgba(0,194,168,0.2)', padding: '2.5rem', borderRadius: '12px', marginTop: '3.5rem', maxWidth: '800px', margin: '3.5rem auto 0 auto', textAlign: 'center' }}>
+        <div style={{ background: 'rgba(255,255,255,0.02)', backdropFilter: 'blur(12px)', border: '1px solid rgba(0,194,168,0.2)', padding: '2.5rem', borderRadius: '12px', marginTop: '3.5rem', maxWidth: '800px', margin: '3.5rem auto 0 auto', textAlign: 'center' }}>
           <h3 style={{ fontSize: '1.4rem', color: 'var(--white)', marginBottom: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
             <Zap size={22} color="var(--teal)" /> 1 New Patient Can Pay For This Entire System
           </h3>
@@ -370,7 +401,7 @@ export default function App() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section id="testimonials" style={{background: 'var(--navy-mid)'}}>
+      <section id="testimonials">
         <span className="section-tag">What clients say</span>
         <h2>Real results from<br /><em>real dental clinics</em></h2>
         <p className="section-intro">Don't take our word for it — here's what clinic owners say after working with Dentist Leads.</p>
@@ -489,25 +520,25 @@ export default function App() {
         <h2>Ready to grow your practice?</h2>
         <p>Skip the forms. Reach out directly via chat, phone, or instantly schedule a real strategy session where we show you the systems in action.</p>
         
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', width: '100%', maxWidth: '1000px', marginTop: '2rem' }}>
+        <div className="contact-grid" style={{ width: '100%', maxWidth: '1000px', marginTop: '2rem' }}>
           
           {/* Card 1: Direct */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', padding: '2rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.08)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '1rem' }}>
+          <div style={{ background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(12px)', padding: '2rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.08)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '1rem' }}>
              <div className="problem-icon" style={{ margin: '0' }}><MessageCircle size={20} /></div>
              <h3 style={{ fontSize: '1.2rem', color: 'var(--white)' }}>Simple & Direct</h3>
              <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', flex: 1 }}>Prefer a simple text or email? Reach out directly to our human team and we will reply instantly.</p>
              <div style={{ display: 'flex', flexDirection: 'column', width: '100%', gap: '0.75rem' }}>
-                <a href="https://wa.me/+2290192206612" target="_blank" rel="noreferrer" className="btn-contact-light-teal" style={{ width: '100%', padding: '0.8rem', fontSize: '0.9rem', gap: '8px' }}>
-                   WhatsApp <MessageCircle size={18} />
+                <a href="https://wa.me/+2290192206612" target="_blank" rel="noreferrer" className="btn-contact-light-teal" style={{ width: '100%', padding: '0.8rem', gap: '8px' }}>
+                   +2290192206612 <MessageCircle size={18} />
                 </a>
-                <a href="mailto:madudimcjx@gmail.com" className="btn-contact-light-teal" style={{ width: '100%', padding: '0.8rem', fontSize: '0.9rem', gap: '8px', textTransform: 'lowercase' }}>
+                <a href="mailto:madudimcjx@gmail.com" className="btn-contact-light-teal" style={{ width: '100%', padding: '0.8rem', gap: '8px', textTransform: 'lowercase' }}>
                    madudimcjx@gmail.com <Mail size={18} />
                 </a>
              </div>
           </div>
 
           {/* Card 2: Calendly/Call */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', padding: '2rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.08)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '1rem' }}>
+          <div style={{ background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(12px)', padding: '2rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.08)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '1rem' }}>
              <div className="problem-icon" style={{ margin: '0' }}><Calendar size={20} /></div>
              <h3 style={{ fontSize: '1.2rem', color: 'var(--white)' }}>Book a Strategy Call</h3>
              <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', flex: 1 }}>Pick a time that works for you. We'll run a live assessment of your current setup and show you the AI system in action.</p>
@@ -517,9 +548,9 @@ export default function App() {
           </div>
 
           {/* Card 3: AI Agent */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', padding: '2rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.08)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '1rem' }}>
+          <div style={{ background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(12px)', padding: '2rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.08)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '1rem' }}>
              <div className="problem-icon" style={{ margin: '0' }}><Bot size={20} /></div>
-             <h3 style={{ fontSize: '1.2rem', color: 'var(--white)' }}>Ask the AI Agent</h3>
+             <h3 style={{ fontSize: '1.2rem', color: 'var(--white)' }}>Ask AI Receptionist</h3>
              <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', flex: 1 }}>Have a quick question about pricing or features? Ask our own AI Sales Agent for an instant answer right now.</p>
              <button 
                 onClick={() => window.dispatchEvent(new Event('open-chatbot'))}
@@ -577,6 +608,8 @@ export default function App() {
           <p style={{ color: 'var(--teal)', fontWeight: '500' }}>Cooked by Digital Chukwudi</p>
         </div>
       </footer>
+        </div>
+      </div>
 
       {/* CHATBOT */}
       <Chatbot />

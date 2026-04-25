@@ -249,7 +249,11 @@ Guide users to the [Pricing](#pricing) section, the [FAQ](#faq) section, or the 
            replyText = followupResponse.text || "I've sent your details to our team! We'll be in touch soon. Can I help you with anything else?";
         }
       } else {
-        replyText = response.text || 'I encountered an error. Please try again.';
+        if (response.error) {
+           replyText = "I encountered an error. This is often due to the generous but strict rate limits of the free AI plan we are currently using. Please wait about a minute and try again, or reach out directly on WhatsApp: +2290192206612.";
+        } else {
+           replyText = response.text || "I encountered an error. This is often due to the generous but strict rate limits of the free AI plan we are currently using. Please wait about a minute and try again, or reach out directly on WhatsApp: +2290192206612.";
+        }
       }
 
       setMessages(prev => [...prev, { role: 'model', content: replyText }]);
@@ -271,7 +275,7 @@ Guide users to the [Pricing](#pricing) section, the [FAQ](#faq) section, or the 
       
       {/* Chat Window */}
       <div 
-        className={`pointer-events-auto w-[380px] sm:w-[400px] bg-[#071324]/80 backdrop-blur-2xl border border-white/10 shadow-2xl rounded-[1.5rem] flex flex-col overflow-hidden transition-all duration-500 ease-out origin-bottom-right transform 
+        className={`pointer-events-auto w-[calc(100vw-3rem)] sm:w-[400px] bg-[#071324]/80 backdrop-blur-2xl border border-white/10 shadow-2xl rounded-[1.5rem] flex flex-col overflow-hidden transition-all duration-500 ease-out origin-bottom-right transform 
           ${isOpen ? 'scale-100 opacity-100 translate-y-0 mb-6' : 'scale-90 opacity-0 translate-y-10 pointer-events-none absolute bottom-0 right-0'}`}
         style={{ height: '520px', maxHeight: 'calc(100vh - 140px)' }}
       >
@@ -320,6 +324,11 @@ Guide users to the [Pricing](#pricing) section, the [FAQ](#faq) section, or the 
                                <a 
                                  href={href} 
                                  {...props} 
+                                 onClick={(e) => {
+                                   if (window.innerWidth <= 768) {
+                                     setIsOpen(false);
+                                   }
+                                 }}
                                  className="text-[#00c2a8] underline font-medium hover:text-emerald-300 transition-colors"
                                  target={isInternal ? undefined : "_blank"}
                                  rel={isInternal ? undefined : "noopener noreferrer"}
