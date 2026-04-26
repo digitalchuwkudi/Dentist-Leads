@@ -7,6 +7,14 @@ import React, { useState } from 'react';
 import { Chatbot } from './components/Chatbot';
 import { Moon, TrendingDown, PhoneCall, Search, Calendar, Bot, Phone, MessageCircle, Menu, X, Rocket, Zap, Mail, ArrowRight, Star, ChevronRight } from 'lucide-react';
 
+const Logo = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 0 8px rgba(0,194,168,0.6))' }}>
+    <path d="M12 22s-2.5-1.5-3.5-3.5C8 17 6.5 16 6 15c-1-2-1-4-1-4s0-5 3.5-7C11.5 2.8 12 2 12 2s.5.8 3.5 2c3.5 2 3.5 7 3.5 7s0 2-1 4c-.5 1-2 2-2.5 3.5C14.5 20.5 12 22 12 22z" />
+    <path d="M12 11c0 2 1 3 3 5" />
+    <path d="M12 11c0 2-1 3-3 5" />
+  </svg>
+);
+
 export default function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -14,12 +22,13 @@ export default function App() {
     <>
       {/* NAV */}
       <nav>
-        <div className="nav-logo" style={{ display: 'flex', alignItems: 'center' }}>
+        <div className="nav-logo" style={{ display: 'flex', alignItems: 'center', gap: '12px', color: 'var(--white)', fontWeight: '600', fontSize: '1.4rem', letterSpacing: '0.5px' }}>
           <img 
             src="https://i.ibb.co/mCLy2twx/Chat-GPT-Image-Apr-22-2026-03-59-53-PM-removebg-preview.png" 
-            alt="Dentist Leads" 
-            style={{ height: '60px', width: 'auto', objectFit: 'contain' }} 
+            alt="Dentist Leads Icon" 
+            style={{ height: '48px', width: 'auto', objectFit: 'contain' }} 
           />
+          <span>Dentist Leads</span>
         </div>
         <div className="nav-links">
           <a href="#">Home</a>
@@ -111,10 +120,10 @@ export default function App() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] max-w-[600px] max-h-[600px] bg-[#00c2a8] rounded-full blur-[120px] opacity-20 pointer-events-none" />
 
             {/* Video Container with Feathered Edges */}
-            <div className="relative w-full max-w-[600px] aspect-square flex items-center justify-center pointer-events-none"
+            <div className="relative w-full max-w-[450px] aspect-[9/16] flex items-center justify-center pointer-events-none"
                  style={{
-                    maskImage: 'radial-gradient(circle at center, black 40%, transparent 65%)',
-                    WebkitMaskImage: 'radial-gradient(circle at center, black 40%, transparent 65%)'
+                    maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 65%)',
+                    WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 65%)'
                  }}>
               
               <video
@@ -123,10 +132,9 @@ export default function App() {
                 loop
                 muted
                 playsInline
-                preload="metadata"
                 className="absolute inset-0 w-full h-full object-cover"
                 style={{
-                  transform: 'scale(1.4) translateX(-5%) translateY(1%)',
+                  transform: 'scale(1.05)',
                   objectPosition: 'center',
                   background: 'transparent'
                 }} 
@@ -174,11 +182,16 @@ export default function App() {
         <div className="absolute inset-0 -z-10 pointer-events-none">
           <div className="sticky top-0 w-full h-[100vh] overflow-hidden">
              <video 
-               src="https://res.cloudinary.com/dx41voszq/video/upload/v1777079142/video_1776967272777028_ng5uji.mp4" 
-               autoPlay loop muted playsInline 
-               className="absolute inset-0 w-full h-full object-cover blur-[20px] opacity-[0.15]" 
+               src="https://res.cloudinary.com/dx41voszq/video/upload/q_auto,f_auto,vc_auto,ac_none/v1777079142/video_1776967272777028_ng5uji.mp4" 
+               autoPlay loop muted playsInline preload="metadata"
+               className="absolute inset-0 w-full h-full object-cover" 
+               style={{ 
+                 opacity: 0.65, 
+                 transform: 'translateZ(0)', 
+                 willChange: 'transform' 
+               }}
              />
-             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a1628]/70 to-[#0a1628] z-10" />
+             <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/10 via-[#0a1628]/60 to-[#0a1628] z-10" />
           </div>
         </div>
 
@@ -566,12 +579,13 @@ export default function App() {
       <footer className="site-footer">
         <div className="footer-content">
           <div className="footer-col">
-            <div className="footer-logo" style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'flex-start', width: '100%' }}>
+            <div className="footer-logo" style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', gap: '12px', width: '100%', color: 'var(--white)', fontWeight: '600', fontSize: '1.4rem', letterSpacing: '0.5px' }}>
               <img 
                 src="https://i.ibb.co/mCLy2twx/Chat-GPT-Image-Apr-22-2026-03-59-53-PM-removebg-preview.png" 
-                alt="Dentist Leads" 
-                style={{ height: '64px', width: 'auto', objectFit: 'contain', margin: '0' }} 
+                alt="Dentist Leads Icon" 
+                style={{ height: '48px', width: 'auto', objectFit: 'contain' }} 
               />
+              <span>Dentist Leads</span>
             </div>
             <p>We install AI-powered patient acquisition systems that turn every website visit into a booked patient — 24/7, without adding pressure to your front desk.</p>
           </div>
