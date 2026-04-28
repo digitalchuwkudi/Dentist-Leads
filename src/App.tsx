@@ -22,13 +22,9 @@ export default function App() {
     <>
       {/* NAV */}
       <nav>
-        <div className="nav-logo" style={{ display: 'flex', alignItems: 'center', gap: '12px', color: 'var(--white)', fontWeight: '600', fontSize: '1.4rem', letterSpacing: '0.5px' }}>
-          <img 
-            src="https://i.ibb.co/mCLy2twx/Chat-GPT-Image-Apr-22-2026-03-59-53-PM-removebg-preview.png" 
-            alt="Dentist Leads Icon" 
-            style={{ height: '48px', width: 'auto', objectFit: 'contain' }} 
-          />
-          <span>Dentist Leads</span>
+        <div className="nav-logo" style={{ display: 'flex', alignItems: 'center', gap: '0px', color: 'var(--white)', fontWeight: '600', fontSize: '1.4rem', letterSpacing: '0.5px' }}>
+          <Logo />
+          <img src="https://i.ibb.co/mCLy2twx/Chat-GPT-Image-Apr-22-2026-03-59-53-PM-removebg-preview.png" alt="Dentist Leads" style={{ height: '57px', width: 'auto', objectFit: 'contain' }} />
         </div>
         <div className="nav-links">
           <a href="#">Home</a>
@@ -181,17 +177,38 @@ export default function App() {
         {/* Sticky Background Video Layer */}
         <div className="absolute inset-0 -z-10 pointer-events-none">
           <div className="sticky top-0 w-full h-[100vh] overflow-hidden">
-             <video 
-               src="https://res.cloudinary.com/dx41voszq/video/upload/q_auto,f_auto,vc_auto,ac_none/v1777079142/video_1776967272777028_ng5uji.mp4" 
-               autoPlay loop muted playsInline preload="metadata"
-               className="absolute inset-0 w-full h-full object-cover" 
+             <div 
+               className="absolute top-0 left-0 right-0 z-20 pointer-events-none" 
                style={{ 
-                 opacity: 0.65, 
-                 transform: 'translateZ(0)', 
-                 willChange: 'transform' 
+                 height: '20%', 
+                 background: 'linear-gradient(to top, transparent, var(--navy))' 
+               }} 
+             />
+             <video 
+               src="https://res.cloudinary.com/dx41voszq/video/upload/q_auto,f_auto,vc_auto/v1777079142/video_1776967272777028_ng5uji.mp4" 
+               autoPlay loop muted playsInline
+               className="absolute w-full h-full"
+               style={{
+                 opacity: 0.65,
+                 objectFit: 'cover',
+                 objectPosition: 'center 20%',
+                 transform: 'translateZ(0)',
+                 willChange: 'transform',
+                 top: '50%',
+                 left: '50%',
+                 minWidth: '100%',
+                 minHeight: '100%',
+                 translate: '-50% -50%',
                }}
              />
-             <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/10 via-[#0a1628]/60 to-[#0a1628] z-10" />
+             <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/20 via-[#0a1628]/55 to-[#0a1628] z-10" />
+             <div 
+               className="absolute bottom-0 left-0 right-0 z-20 pointer-events-none" 
+               style={{ 
+                 height: '35%', 
+                 background: 'linear-gradient(to bottom, transparent, var(--navy))' 
+               }} 
+             />
           </div>
         </div>
 
@@ -204,22 +221,22 @@ export default function App() {
         <p className="section-intro">We install a complete AI Patient Acquisition System into your clinic that:</p>
 
         <div className="problem-grid" style={{ marginTop: '2rem' }}>
-           <div className="problem-card" style={{ background: 'rgba(255,255,255,0.03)' }}>
+           <div className="problem-card" style={{ background: 'rgba(10,22,40,0.65)' }}>
               <div className="problem-icon" style={{ margin: '0 0 1rem 0' }}><MessageCircle size={20} /></div>
               <h3>Engages visitors instantly</h3>
               <p>Reaches out to every visitor the second they land on your site.</p>
            </div>
-           <div className="problem-card" style={{ background: 'rgba(255,255,255,0.03)' }}>
+           <div className="problem-card" style={{ background: 'rgba(10,22,40,0.65)' }}>
               <div className="problem-icon" style={{ margin: '0 0 1rem 0' }}><PhoneCall size={20} /></div>
               <h3>Answers questions in real-time</h3>
               <p>Provides accurate, clinic-specific answers directly to the patient.</p>
            </div>
-           <div className="problem-card" style={{ background: 'rgba(255,255,255,0.03)' }}>
+           <div className="problem-card" style={{ background: 'rgba(10,22,40,0.65)' }}>
               <div className="problem-icon" style={{ margin: '0 0 1rem 0' }}><TrendingDown size={20} /></div>
                <h3>Handles objections</h3>
               <p>Overcomes price concerns, fear, and builds urgency automatically.</p>
            </div>
-           <div className="problem-card" style={{ background: 'rgba(255,255,255,0.03)' }}>
+           <div className="problem-card" style={{ background: 'rgba(10,22,40,0.65)' }}>
               <div className="problem-icon" style={{ margin: '0 0 1rem 0' }}><Zap size={20} /></div>
               <h3>Delivers ready-to-book patients</h3>
               <p>Captures contact details, pre-qualifies, and sends them directly to your front desk.</p>
@@ -272,6 +289,8 @@ export default function App() {
 
         </div>
       </section>
+      </div> {/* END OF relative z-20 for Video Header 1 */}
+    </div> {/* END OF relative w-full for Video Header 1 */}
 
       {/* HOW IT WORKS */}
       <section className="how" id="how">
@@ -424,7 +443,7 @@ export default function App() {
             <div className="testi-stars">★★★★★</div>
             <p className="testi-quote">"We used to lose at least 3 or 4 booking opportunities every weekend. Now the AI handles them instantly and our front desk calls them back Monday with warm patients already in hand. First month we booked two Invisalign consults we would have completely missed."</p>
             <div className="testi-author">
-              <div className="testi-avatar"><img src="https://picsum.photos/seed/dentist1/100/100" alt="Dr. David M." referrerPolicy="no-referrer" /></div>
+              <div className="testi-avatar"><img src="https://i.ibb.co/KpzqdzMW/Whisk-94818621cf8fdce93ea4f5a9dd3627b9dr.jpg" alt="Dr. David M." referrerPolicy="no-referrer" /></div>
               <div>
                 <div className="testi-name">Dr. David M.</div>
                 <div className="testi-role">Principal Dentist · Family Dental Practice</div>
@@ -436,7 +455,7 @@ export default function App() {
             <div className="testi-stars">★★★★★</div>
             <p className="testi-quote">"The Google ads campaign alone brought in 11 new patient enquiries in the first 3 weeks. What surprised me was how qualified they were — people asking specifically about implants and whitening, not just general checkups. The ROI was obvious within the first month."</p>
             <div className="testi-author">
-              <div className="testi-avatar"><img src="https://picsum.photos/seed/dentist2/100/100" alt="Dr. Sarah N." referrerPolicy="no-referrer" /></div>
+              <div className="testi-avatar"><img src="https://i.ibb.co/5xf9xbrY/Whisk-53825eae9d5102d85fd48376e0926d13dr.jpg" alt="Dr. Sarah N." referrerPolicy="no-referrer" /></div>
               <div>
                 <div className="testi-name">Dr. Sarah N.</div>
                 <div className="testi-role">Practice Owner · City Smiles Dental</div>
@@ -448,7 +467,7 @@ export default function App() {
             <div className="testi-stars">★★★★★</div>
             <p className="testi-quote">"I was sceptical at first — I've tried agencies before and got a lot of promises with little to show for it. Dentist Leads is different. The demo showed me exactly what the system does before I spent a single dollar. Three months in and we've added roughly $12,000 in new patient revenue."</p>
             <div className="testi-author">
-              <div className="testi-avatar"><img src="https://picsum.photos/seed/dentist3/100/100" alt="Dr. Ade O." referrerPolicy="no-referrer" /></div>
+              <div className="testi-avatar"><img src="https://i.ibb.co/s9vxk4YJ/Whisk-8550d9bdeb5877abd6742122a69cb012dr.jpg" alt="Dr. Ade O." referrerPolicy="no-referrer" /></div>
               <div>
                 <div className="testi-name">Dr. Ade O.</div>
                 <div className="testi-role">Clinic Director · Smile Studio</div>
@@ -460,7 +479,7 @@ export default function App() {
             <div className="testi-stars">★★★★★</div>
             <p className="testi-quote">"Setup was genuinely painless. I sent over our service list and pricing on Monday, and by Wednesday the whole system was live. The AI even knew how to handle questions about payment plans and dental anxiety — things our front desk normally has to explain for 10 minutes on the phone."</p>
             <div className="testi-author">
-              <div className="testi-avatar"><img src="https://picsum.photos/seed/dentist4/100/100" alt="Rachel C." referrerPolicy="no-referrer" /></div>
+              <div className="testi-avatar"><img src="https://i.ibb.co/XZ9PwVMk/Whisk-cfe1f39ce5200ad99c840706e2547e6adr.jpg" alt="Rachel C." referrerPolicy="no-referrer" /></div>
               <div>
                 <div className="testi-name">Rachel C.</div>
                 <div className="testi-role">Practice Manager · Brightside Dental</div>
@@ -472,7 +491,7 @@ export default function App() {
             <div className="testi-stars">★★★★★</div>
             <p className="testi-quote">"What I love is seeing the patient details come through at 10 PM on a Friday with a full conversation already done. The patient has been answered, reassured, and is expecting our call Monday morning. That's a different kind of patient — they're already sold."</p>
             <div className="testi-author">
-              <div className="testi-avatar"><img src="https://picsum.photos/seed/dentist5/100/100" alt="Dr. James T." referrerPolicy="no-referrer" /></div>
+              <div className="testi-avatar"><img src="https://i.ibb.co/fVRHpYp8/Whisk-7b211d27913b79ba2874231d19223a8fdr.jpg" alt="Dr. James T." referrerPolicy="no-referrer" /></div>
               <div>
                 <div className="testi-name">Dr. James T.</div>
                 <div className="testi-role">Owner · Prestige Dental Group</div>
@@ -484,7 +503,7 @@ export default function App() {
             <div className="testi-stars">★★★★★</div>
             <p className="testi-quote">"We went from spending money on ads that went nowhere to having a system where every click has somewhere to land. The combination of the AI site and the ad campaigns working together is what makes the difference. Our cost per booked appointment dropped by almost half."</p>
             <div className="testi-author">
-              <div className="testi-avatar"><img src="https://picsum.photos/seed/dentist6/100/100" alt="Dr. Priya M." referrerPolicy="no-referrer" /></div>
+              <div className="testi-avatar"><img src="https://i.ibb.co/pFrfGyr/Whisk-2665123af44e180afa44edd6da8839a9dr.jpg" alt="Dr. Priya M." referrerPolicy="no-referrer" /></div>
               <div>
                 <div className="testi-name">Dr. Priya M.</div>
                 <div className="testi-role">Principal · Apex Dental Care</div>
@@ -526,6 +545,48 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      <div className="relative w-full">
+        {/* Sticky Background Video Layer 2 */}
+        <div className="absolute inset-0 -z-10 pointer-events-none">
+          <div className="sticky top-0 w-full h-[100vh] overflow-hidden">
+             <div 
+               className="absolute top-0 left-0 right-0 z-20 pointer-events-none" 
+               style={{ 
+                 height: '20%', 
+                 background: 'linear-gradient(to top, transparent, var(--navy))' 
+               }} 
+             />
+             <video 
+               src="https://res.cloudinary.com/dx41voszq/video/upload/q_auto,f_auto,vc_auto/v1777079142/video_1776967272777028_ng5uji.mp4" 
+               autoPlay loop muted playsInline
+               className="absolute w-full h-full"
+               style={{
+                 opacity: 0.65,
+                 objectFit: 'cover',
+                 objectPosition: 'center 80%',
+                 transform: 'translateZ(0)',
+                 willChange: 'transform',
+                 top: '50%',
+                 left: '50%',
+                 minWidth: '100%',
+                 minHeight: '100%',
+                 translate: '-50% -50%',
+                 rotate: '180deg'
+               }}
+             />
+             <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/20 via-[#0a1628]/55 to-[#0a1628] z-10" />
+             <div 
+               className="absolute bottom-0 left-0 right-0 z-20 pointer-events-none" 
+               style={{ 
+                 height: '35%', 
+                 background: 'linear-gradient(to bottom, transparent, var(--navy))' 
+               }} 
+             />
+          </div>
+        </div>
+
+        <div className="relative z-20">
 
       {/* CONTACT */}
       <section className="cta-section" id="contact" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -579,13 +640,9 @@ export default function App() {
       <footer className="site-footer">
         <div className="footer-content">
           <div className="footer-col">
-            <div className="footer-logo" style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', gap: '12px', width: '100%', color: 'var(--white)', fontWeight: '600', fontSize: '1.4rem', letterSpacing: '0.5px' }}>
-              <img 
-                src="https://i.ibb.co/mCLy2twx/Chat-GPT-Image-Apr-22-2026-03-59-53-PM-removebg-preview.png" 
-                alt="Dentist Leads Icon" 
-                style={{ height: '48px', width: 'auto', objectFit: 'contain' }} 
-              />
-              <span>Dentist Leads</span>
+            <div className="footer-logo" style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', gap: '0px', width: '100%', color: 'var(--white)', fontWeight: '600', fontSize: '1.4rem', letterSpacing: '0.5px' }}>
+              <Logo />
+              <img src="https://i.ibb.co/mCLy2twx/Chat-GPT-Image-Apr-22-2026-03-59-53-PM-removebg-preview.png" alt="Dentist Leads" style={{ height: '57px', width: 'auto', objectFit: 'contain' }} />
             </div>
             <p>We install AI-powered patient acquisition systems that turn every website visit into a booked patient — 24/7, without adding pressure to your front desk.</p>
           </div>
