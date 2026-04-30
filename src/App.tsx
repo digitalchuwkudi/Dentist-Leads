@@ -65,9 +65,9 @@ export default function App() {
         <div className="mx-auto w-full max-w-[1600px] flex flex-col lg:flex-row relative z-10" style={{ minHeight: '100vh' }}>
           
           {/* Left Column: Text */}
-          <div className="w-full lg:w-1/2 flex flex-col justify-center items-center text-center lg:items-start lg:text-left pt-28 pb-16 px-6 lg:pl-12 lg:pr-8">
-            <div className="hero-eyebrow flex justify-center lg:justify-start w-full">AI Patient Acquisition System for Dental Clinics</div>
-            <h1 className="text-center lg:text-left w-full">Turn Every Website Visit Into a <em>Booked Patient</em></h1>
+          <div className="w-full lg:w-1/2 flex flex-col justify-center items-center text-center lg:items-start lg:text-left pt-32 lg:pt-40 pb-16 px-6 lg:pl-12 lg:pr-8">
+             <div className="hero-eyebrow flex justify-center lg:justify-start w-full" style={{ marginTop: '0.3rem' }}>AI Patient Acquisition System for Dental Clinics</div>
+             <h1 className="text-center lg:text-left w-full">Turn Every Website Visit Into a <em>Booked Patient</em></h1>
             <p className="hero-sub text-center lg:text-left max-w-2xl w-full mx-auto lg:mx-0 m-0 mb-10">Your website shouldn’t just sit there — it should convert. We install a 24/7 AI system that engages, qualifies, and turns every visitor into a real patient — even after hours, on weekends, or when your front desk is busy.</p>
             
             <div style={{ marginTop: '-1rem', marginBottom: '2.5rem', fontSize: '1.05rem', fontWeight: 500, color: 'var(--teal)' }} className="w-full flex justify-center lg:justify-start">
@@ -128,6 +128,7 @@ export default function App() {
                 loop
                 muted
                 playsInline
+                preload="auto"
                 className="absolute inset-0 w-full h-full object-cover"
                 style={{
                   transform: 'scale(1.05)',
@@ -173,47 +174,24 @@ export default function App() {
         </div>
       </section>
 
-      <div className="relative w-full">
-        {/* Sticky Background Video Layer */}
-        <div className="absolute inset-0 -z-10 pointer-events-none">
-          <div className="sticky top-0 w-full h-[100vh] overflow-hidden">
-             <div 
-               className="absolute top-0 left-0 right-0 z-20 pointer-events-none" 
-               style={{ 
-                 height: '20%', 
-                 background: 'linear-gradient(to top, transparent, var(--navy))' 
-               }} 
-             />
+      {/* Scroll Video Area 1 */}
+      <section className="relative w-full h-[100vh] pointer-events-none" style={{ clipPath: 'inset(0 0 0 0)' }}>
+         <div className="fixed top-0 left-0 w-full h-[100vh] -z-10 bg-[var(--navy)] flex items-center justify-center pointer-events-none">
              <video 
                src="https://res.cloudinary.com/dx41voszq/video/upload/q_auto,f_auto,vc_auto/v1777079142/video_1776967272777028_ng5uji.mp4" 
-               autoPlay loop muted playsInline
-               className="absolute w-full h-full"
+               autoPlay loop muted playsInline preload="auto"
+               className="w-full h-full object-cover max-w-none"
                style={{
-                 opacity: 0.65,
-                 objectFit: 'cover',
-                 objectPosition: 'center 20%',
-                 transform: 'translateZ(0)',
-                 willChange: 'transform',
-                 top: '50%',
-                 left: '50%',
-                 minWidth: '100%',
-                 minHeight: '100%',
-                 translate: '-50% -50%',
+                 opacity: 0.7,
+                 transform: 'scale(1.05) translateZ(0)',
+                 willChange: 'transform'
                }}
              />
-             <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/20 via-[#0a1628]/55 to-[#0a1628] z-10" />
-             <div 
-               className="absolute bottom-0 left-0 right-0 z-20 pointer-events-none" 
-               style={{ 
-                 height: '35%', 
-                 background: 'linear-gradient(to bottom, transparent, var(--navy))' 
-               }} 
-             />
-          </div>
-        </div>
+             <div className="absolute inset-0 z-10" style={{ background: 'radial-gradient(circle at center, transparent 25%, var(--navy) 65%)' }} />
+         </div>
+      </section>
 
-        <div className="relative z-20">
-
+      <div className="relative z-20 bg-[var(--navy)] w-full">
       {/* WHAT WE DO */}
       <section id="services">
         <span className="section-tag">What we do</span>
@@ -255,7 +233,7 @@ export default function App() {
         
         <div className="services-three" style={{ marginTop: '3.5rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', alignItems: 'stretch' }}>
            
-           <div className="problem-card grainy-card">
+           <div className="problem-card">
               <h3 style={{ color: 'var(--teal)', fontSize: '1.2rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <Moon size={18} /> After-hours visits
               </h3>
@@ -263,7 +241,7 @@ export default function App() {
               <p style={{ marginTop: '1rem', color: 'var(--white)', fontWeight: 500, display: 'flex', alignItems: 'flex-start', gap: '8px', textAlign: 'left' }}><ChevronRight size={18} color="var(--teal)" className="shrink-0 mt-0.5" /> We respond instantly and secure their details</p>
            </div>
 
-           <div className="problem-card grainy-card">
+           <div className="problem-card">
               <h3 style={{ color: 'var(--teal)', fontSize: '1.2rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <PhoneCall size={18} /> Busy front desk
               </h3>
@@ -271,7 +249,7 @@ export default function App() {
               <p style={{ marginTop: '1rem', color: 'var(--white)', fontWeight: 500, display: 'flex', alignItems: 'flex-start', gap: '8px', textAlign: 'left' }}><ChevronRight size={18} color="var(--teal)" className="shrink-0 mt-0.5" /> AI handles conversations in real time</p>
            </div>
 
-           <div className="problem-card grainy-card">
+           <div className="problem-card">
               <h3 style={{ color: 'var(--teal)', fontSize: '1.2rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <MessageCircle size={18} /> Cold enquiries
               </h3>
@@ -279,7 +257,7 @@ export default function App() {
               <p style={{ marginTop: '1rem', color: 'var(--white)', fontWeight: 500, display: 'flex', alignItems: 'flex-start', gap: '8px', textAlign: 'left' }}><ChevronRight size={18} color="var(--teal)" className="shrink-0 mt-0.5" /> AI builds trust and moves them toward booking</p>
            </div>
 
-           <div className="problem-card grainy-card">
+           <div className="problem-card">
               <h3 style={{ color: 'var(--teal)', fontSize: '1.2rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <TrendingDown size={18} /> Paid traffic leaks
               </h3>
@@ -289,8 +267,6 @@ export default function App() {
 
         </div>
       </section>
-      </div> {/* END OF relative z-20 for Video Header 1 */}
-    </div> {/* END OF relative w-full for Video Header 1 */}
 
       {/* HOW IT WORKS */}
       <section className="how" id="how">
@@ -455,7 +431,7 @@ export default function App() {
             <div className="testi-stars">★★★★★</div>
             <p className="testi-quote">"The Google ads campaign alone brought in 11 new patient enquiries in the first 3 weeks. What surprised me was how qualified they were — people asking specifically about implants and whitening, not just general checkups. The ROI was obvious within the first month."</p>
             <div className="testi-author">
-              <div className="testi-avatar"><img src="https://i.ibb.co/5xf9xbrY/Whisk-53825eae9d5102d85fd48376e0926d13dr.jpg" alt="Dr. Sarah N." referrerPolicy="no-referrer" /></div>
+              <div className="testi-avatar"><img src="https://i.ibb.co/s9vxk4YJ/Whisk-8550d9bdeb5877abd6742122a69cb012dr.jpg" alt="Dr. Sarah N." referrerPolicy="no-referrer" /></div>
               <div>
                 <div className="testi-name">Dr. Sarah N.</div>
                 <div className="testi-role">Practice Owner · City Smiles Dental</div>
@@ -467,7 +443,7 @@ export default function App() {
             <div className="testi-stars">★★★★★</div>
             <p className="testi-quote">"I was sceptical at first — I've tried agencies before and got a lot of promises with little to show for it. Dentist Leads is different. The demo showed me exactly what the system does before I spent a single dollar. Three months in and we've added roughly $12,000 in new patient revenue."</p>
             <div className="testi-author">
-              <div className="testi-avatar"><img src="https://i.ibb.co/s9vxk4YJ/Whisk-8550d9bdeb5877abd6742122a69cb012dr.jpg" alt="Dr. Ade O." referrerPolicy="no-referrer" /></div>
+              <div className="testi-avatar"><img src="https://i.ibb.co/5xf9xbrY/Whisk-53825eae9d5102d85fd48376e0926d13dr.jpg" alt="Dr. Ade O." referrerPolicy="no-referrer" /></div>
               <div>
                 <div className="testi-name">Dr. Ade O.</div>
                 <div className="testi-role">Clinic Director · Smile Studio</div>
@@ -545,49 +521,26 @@ export default function App() {
           </div>
         </div>
       </section>
+      </div>
 
-      <div className="relative w-full">
-        {/* Sticky Background Video Layer 2 */}
-        <div className="absolute inset-0 -z-10 pointer-events-none">
-          <div className="sticky top-0 w-full h-[100vh] overflow-hidden">
-             <div 
-               className="absolute top-0 left-0 right-0 z-20 pointer-events-none" 
-               style={{ 
-                 height: '20%', 
-                 background: 'linear-gradient(to top, transparent, var(--navy))' 
-               }} 
-             />
+      {/* Scroll Video Area 2 */}
+      <section className="relative w-full h-[100vh] pointer-events-none" style={{ clipPath: 'inset(0 0 0 0)' }}>
+         <div className="fixed top-0 left-0 w-full h-[100vh] -z-10 bg-[var(--navy)] flex items-center justify-center pointer-events-none">
              <video 
-               src="https://res.cloudinary.com/dx41voszq/video/upload/q_auto,f_auto,vc_auto/v1777079142/video_1776967272777028_ng5uji.mp4" 
-               autoPlay loop muted playsInline
-               className="absolute w-full h-full"
+               src="https://res.cloudinary.com/dx41voszq/video/upload/q_auto,f_auto,vc_auto/v1777079142/video_1776967272777028_ng5uji.mp4?v=2" 
+               autoPlay loop muted playsInline preload="auto"
+               className="w-full h-full object-cover max-w-none"
                style={{
-                 opacity: 0.65,
-                 objectFit: 'cover',
-                 objectPosition: 'center 80%',
-                 transform: 'translateZ(0)',
-                 willChange: 'transform',
-                 top: '50%',
-                 left: '50%',
-                 minWidth: '100%',
-                 minHeight: '100%',
-                 translate: '-50% -50%',
-                 rotate: '180deg'
+                 opacity: 0.7,
+                 transform: 'scale(-1.05, 1.05) translateZ(0)',
+                 willChange: 'transform'
                }}
              />
-             <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/20 via-[#0a1628]/55 to-[#0a1628] z-10" />
-             <div 
-               className="absolute bottom-0 left-0 right-0 z-20 pointer-events-none" 
-               style={{ 
-                 height: '35%', 
-                 background: 'linear-gradient(to bottom, transparent, var(--navy))' 
-               }} 
-             />
-          </div>
-        </div>
+             <div className="absolute inset-0 z-10" style={{ background: 'radial-gradient(circle at center, transparent 25%, var(--navy) 65%)' }} />
+         </div>
+      </section>
 
-        <div className="relative z-20">
-
+      <div className="relative z-20 bg-[var(--navy)] w-full">
       {/* CONTACT */}
       <section className="cta-section" id="contact" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <span className="section-tag">Contact</span>
@@ -679,7 +632,6 @@ export default function App() {
           <p style={{ color: 'var(--teal)', fontWeight: '500' }}>Cooked by Digital Chukwudi</p>
         </div>
       </footer>
-        </div>
       </div>
 
       {/* CHATBOT */}
