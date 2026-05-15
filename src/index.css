@@ -56,13 +56,13 @@ nav {
 .nav-logo span { color: var(--teal); font-style: italic; }
 
 .nav-links { display: flex; gap: 2rem; align-items: center; }
-.nav-links a { font-size: 0.85rem; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+.nav-links a { font-size: 1rem; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
 .nav-links a:hover { color: var(--teal); }
 
 .nav-links a.nav-cta {
   background: var(--teal); color: var(--navy) !important;
   padding: 0.55rem 1.25rem; border-radius: 4px;
-  font-size: 0.95rem; font-weight: 500;
+  font-size: 1.1rem; font-weight: 500;
   text-decoration: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-block;
 }
@@ -108,7 +108,7 @@ nav {
 .mobile-menu a:hover { color: var(--teal); }
 
 .mobile-menu a.nav-cta {
-  margin-top: 1rem; font-size: 1rem;
+  margin-top: 1rem; font-size: 1.1rem;
   padding: 1rem 2rem;
   background: var(--teal);
   color: var(--navy);
@@ -140,7 +140,7 @@ nav {
 
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
-  font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em;
+  font-size: 0.85rem; font-weight: 500; letter-spacing: 0.12em;
   text-transform: uppercase; color: var(--teal);
   margin-bottom: 1.5rem;
 }
@@ -177,7 +177,7 @@ h1 em {
 .btn-primary {
   background: var(--teal); color: var(--navy);
   padding: 0.9rem 2rem; border-radius: 4px;
-  font-size: 0.95rem; font-weight: 500;
+  font-size: 1.1rem; font-weight: 500;
   text-decoration: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex; justify-content: center; align-items: center; gap: 10px;
   cursor: pointer;
@@ -193,7 +193,7 @@ h1 em {
 .btn-contact-light-teal {
   background: var(--teal); color: var(--navy);
   padding: 0.9rem 2rem; border-radius: 4px;
-  font-size: 0.95rem; font-weight: 500;
+  font-size: 1.1rem; font-weight: 500;
   text-decoration: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex; justify-content: center; align-items: center; gap: 10px;
   cursor: pointer;
@@ -209,7 +209,7 @@ h1 em {
 .btn-contact-white {
   background: #ffffff; color: var(--navy);
   padding: 0.9rem 2rem; border-radius: 4px;
-  font-size: 0.95rem; font-weight: 500;
+  font-size: 1.1rem; font-weight: 500;
   text-decoration: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex; justify-content: center; align-items: center; gap: 10px;
   cursor: pointer;
@@ -260,7 +260,7 @@ h1 em {
 }
 
 .btn-ghost {
-  color: var(--cream); font-size: 0.9rem;
+  color: var(--cream); font-size: 1.05rem;
   text-decoration: none; display: inline-flex;
   align-items: center; gap: 6px;
   border-bottom: 1px solid rgba(245,240,232,0.25);
@@ -286,13 +286,13 @@ h1 em {
 }
 
 .stat-num span { color: var(--teal); }
-.stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+.stat-label { font-size: 0.95rem; color: var(--text-muted); margin-top: 2px; }
 
 /* SECTION BASICS */
 section { padding: 6rem 5%; }
 
 .section-tag {
-  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em;
+  font-size: 0.85rem; font-weight: 500; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--teal);
   margin: 0 auto 1rem; display: block; text-align: center;
 }
@@ -308,7 +308,7 @@ h2 {
 h2 em { font-style: italic; color: var(--teal); }
 
 .section-intro {
-  font-size: 1rem; color: var(--text-muted);
+  font-size: 1.1rem; color: var(--text-muted);
   max-width: 540px; line-height: 1.8;
   margin: 0 auto 3.5rem; text-align: center;
 }
@@ -376,19 +376,19 @@ h2 em { font-style: italic; color: var(--teal); }
 }
 
 .problem-card h3 {
-  font-size: 1rem; font-weight: 500;
+  font-size: 1.1rem; font-weight: 500;
   color: var(--white); margin-bottom: 0.6rem;
 }
 
 .problem-card p {
-  font-size: 0.95rem; color: var(--text-muted); line-height: 1.7;
+  font-size: 1.1rem; color: var(--text-muted); line-height: 1.7;
 }
 
 .problem-icon {
   width: 40px; height: 40px; border-radius: 8px;
   background: rgba(0,194,168,0.1); color: var(--teal);
   display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 1.25rem !important; font-size: 16px;
+  margin: 0 auto 1.25rem !important; font-size: 18px;
 }
 
 .grainy-card::after {
@@ -436,7 +436,7 @@ h2 em { font-style: italic; color: var(--teal); }
 .service-badge {
   display: inline-block; position: absolute;
   top: 1.25rem; right: 1.25rem;
-  font-size: 0.7rem; font-weight: 500;
+  font-size: 0.85rem; font-weight: 500;
   letter-spacing: 0.1em; text-transform: uppercase;
   background: rgba(0,194,168,0.15); color: var(--teal);
   padding: 3px 10px; border-radius: 20px;
@@ -455,14 +455,14 @@ h2 em { font-style: italic; color: var(--teal); }
 }
 
 .service-card > p {
-  font-size: 0.95rem; color: var(--text-muted);
+  font-size: 1.1rem; color: var(--text-muted);
   line-height: 1.75; margin-bottom: 1.5rem;
 }
 
 .service-price {
   margin-top: 1.75rem; padding-top: 1.25rem;
   border-top: 1px solid rgba(255,255,255,0.07);
-  font-size: 0.95rem; color: var(--text-muted);
+  font-size: 1.1rem; color: var(--text-muted);
 }
 
 .service-price strong { color: var(--white); font-weight: 500; }
@@ -524,10 +524,10 @@ h2 em { font-style: italic; color: var(--teal); }
   transform: translateY(-2px) translateZ(0);
 }
 
-.testi-stars { color: var(--teal); font-size: 0.85rem; letter-spacing: 2px; }
+.testi-stars { color: var(--teal); font-size: 1rem; letter-spacing: 2px; }
 
 .testi-quote {
-  font-size: 1rem; color: var(--cream);
+  font-size: 1.1rem; color: var(--cream);
   line-height: 1.8; font-style: italic; flex: 1;
 }
 
@@ -550,8 +550,8 @@ h2 em { font-style: italic; color: var(--teal); }
   width: 100%; height: 100%; object-fit: cover;
 }
 
-.testi-name { font-size: 0.95rem; font-weight: 500; color: var(--white); }
-.testi-role { font-size: 0.85rem; color: var(--text-muted); margin-top: 2px; }
+.testi-name { font-size: 1.1rem; font-weight: 500; color: var(--white); }
+.testi-role { font-size: 1rem; color: var(--text-muted); margin-top: 2px; }
 
 /* LEGACY service-block (unused but kept) */
 .service-block { padding: 2rem; }
@@ -562,14 +562,14 @@ h2 em { font-style: italic; color: var(--teal); }
 }
 
 .service-list li {
-  font-size: 0.95rem; color: var(--cream-dark);
+  font-size: 1.1rem; color: var(--cream-dark);
   display: flex; align-items: flex-start; gap: 8px;
   justify-content: center;
 }
 
 .service-list li::before {
   content: '→'; color: var(--teal);
-  font-size: 0.8rem; margin-top: 1px; flex-shrink: 0;
+  font-size: 0.95rem; margin-top: 1px; flex-shrink: 0;
 }
 
 /* HOW IT WORKS */
@@ -605,16 +605,16 @@ h2 em { font-style: italic; color: var(--teal); }
 
 .step-num {
   font-family: var(--serif);
-  font-size: 0.85rem; font-style: italic;
+  font-size: 1rem; font-style: italic;
   color: var(--teal); margin-bottom: 1rem;
 }
 
 .step h3 {
-  font-size: 1rem; font-weight: 500;
+  font-size: 1.1rem; font-weight: 500;
   color: var(--white); margin-bottom: 0.5rem;
 }
 
-.step p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; }
+.step p { font-size: 1.1rem; color: var(--text-muted); line-height: 1.7; }
 
 /* PRICING */
 .pricing-grid {
@@ -649,7 +649,7 @@ h2 em { font-style: italic; color: var(--teal); }
 }
 
 .price-tag {
-  font-size: 0.7rem; font-weight: 500;
+  font-size: 0.85rem; font-weight: 500;
   letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--teal); margin-bottom: 1.5rem;
   display: block;
@@ -668,12 +668,12 @@ h2 em { font-style: italic; color: var(--teal); }
 }
 
 .price-card .price sub {
-  font-size: 1rem; color: var(--text-muted);
+  font-size: 1.1rem; color: var(--text-muted);
   font-family: var(--sans);
 }
 
 .price-card .price-note {
-  font-size: 0.95rem; color: var(--text-muted);
+  font-size: 1.1rem; color: var(--text-muted);
   margin-bottom: 1.75rem;
 }
 
@@ -685,21 +685,21 @@ h2 em { font-style: italic; color: var(--teal); }
 .price-features { list-style: none; display: flex; flex-direction: column; gap: 10px; width: 100%; }
 
 .price-features li {
-  font-size: 0.95rem; color: var(--cream-dark);
+  font-size: 1.1rem; color: var(--cream-dark);
   display: flex; gap: 10px; align-items: flex-start;
   justify-content: flex-start; text-align: left;
 }
 
 .price-features li::before {
   content: '✓'; color: var(--teal);
-  font-size: 0.8rem; flex-shrink: 0; margin-top: 1px;
+  font-size: 0.95rem; flex-shrink: 0; margin-top: 1px;
 }
 
 .price-cta {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   margin-top: auto;
   padding: 0.8rem; border-radius: 4px;
-  font-size: 0.95rem; font-weight: 500;
+  font-size: 1.1rem; font-weight: 500;
   text-decoration: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background: #ffffff;
   border: none;
@@ -757,7 +757,7 @@ h2 em { font-style: italic; color: var(--teal); }
 }
 
 .obj-q {
-  font-size: 0.92rem; font-weight: 500;
+  font-size: 1.05rem; font-weight: 500;
   color: var(--cream); margin-bottom: 0.75rem;
   display: flex; gap: 10px;
   flex-direction: column; align-items: center;
@@ -769,12 +769,12 @@ h2 em { font-style: italic; color: var(--teal); }
   color: var(--teal); width: 22px; height: 22px;
   border-radius: 4px; display: flex;
   align-items: center; justify-content: center;
-  font-size: 0.75rem; font-weight: 500;
+  font-size: 0.85rem; font-weight: 500;
   flex-shrink: 0; margin-bottom: 0.5rem;
 }
 
 .obj-a {
-  font-size: 0.95rem; color: var(--text-muted);
+  font-size: 1.1rem; color: var(--text-muted);
   line-height: 1.75; padding-left: 0;
 }
 
@@ -790,7 +790,7 @@ h2 em { font-style: italic; color: var(--teal); }
 }
 
 .trust-item {
-  font-size: 0.82rem; color: var(--text-muted);
+  font-size: 0.95rem; color: var(--text-muted);
   display: flex; align-items: center; gap: 8px;
 }
 
@@ -817,7 +817,7 @@ h2 em { font-style: italic; color: var(--teal); }
 .cta-section h2 { margin-bottom: 1rem; }
 
 .cta-section p {
-  font-size: 1rem; color: var(--text-muted);
+  font-size: 1.1rem; color: var(--text-muted);
   max-width: 440px; margin: 0 auto 2.5rem;
   line-height: 1.8;
 }
@@ -839,14 +839,14 @@ h2 em { font-style: italic; color: var(--teal); }
 
 .footer-col h4 {
   color: var(--white);
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   margin-bottom: 1.25rem;
   font-weight: 500;
 }
 
 .footer-col p {
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   margin-top: 1rem;
   line-height: 1.6;
   max-width: 320px;
@@ -861,7 +861,7 @@ h2 em { font-style: italic; color: var(--teal); }
 .footer-links a {
   color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   transition: color 0.2s;
 }
 
@@ -899,7 +899,7 @@ h2 em { font-style: italic; color: var(--teal); }
 
 .footer-bottom p {
   color: var(--text-muted);
-  font-size: 0.85rem;
+  font-size: 1rem;
   margin: 0;
 }
 
@@ -942,7 +942,7 @@ h1 { animation: fadeUp 0.6s 0.1s ease both; }
 @media (max-width: 600px) {
   .hero { padding: 7rem 5% 3rem; }
   .hero h1 { font-size: 3rem; line-height: 1.15; margin-bottom: 1rem; }
-  .hero-sub { font-size: 1rem; margin-bottom: 2rem; }
+  .hero-sub { font-size: 1.1rem; margin-bottom: 2rem; }
   .hero-actions .btn-hero-ai div[style] { text-align: left !important; }
   .btn-hero-ai { flex-direction: row; justify-content: center; text-align: left; }
   
@@ -951,7 +951,7 @@ h1 { animation: fadeUp 0.6s 0.1s ease both; }
   
   section { padding: 4rem 5%; }
   h2 { font-size: 2rem; line-height: 1.25; margin-bottom: 1.2rem; }
-  .section-intro { font-size: 0.95rem; margin-bottom: 2.5rem; max-width: 100%; }
+  .section-intro { font-size: 1.1rem; margin-bottom: 2.5rem; max-width: 100%; }
   
   .steps { grid-template-columns: 1fr; }
   .step { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 2rem 1.5rem; text-align: left; align-items: flex-start; }

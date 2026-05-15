@@ -70,15 +70,15 @@ export default function App() {
              <h1 className="text-center lg:text-left w-full">Turn Every Website Visit Into a <em>Booked Patient</em></h1>
             <p className="hero-sub text-center lg:text-left max-w-2xl w-full mx-auto lg:mx-0 m-0 mb-10">Your website shouldn’t just sit there — it should convert. We install a 24/7 AI system that engages, qualifies, and turns every visitor into a real patient — even after hours, on weekends, or when your front desk is busy.</p>
             
-            <div style={{ marginTop: '-1rem', marginBottom: '2.5rem', fontSize: '1.05rem', fontWeight: 500, color: 'var(--teal)' }} className="w-full flex justify-center lg:justify-start">
+            <div style={{ marginTop: '-1rem', marginBottom: '2.5rem', fontSize: '1.15rem', fontWeight: 500, color: 'var(--teal)' }} className="w-full flex justify-center lg:justify-start">
               <p className="flex items-center justify-center lg:justify-start gap-2 w-full m-0 mx-auto lg:mx-0"><ChevronRight size={18} color="var(--teal)" className="shrink-0" /> No missed enquiries. No delayed responses.</p>
             </div>
 
             <div className="hero-actions flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-5 w-full">
               <button onClick={() => window.dispatchEvent(new Event('open-chatbot'))} className="btn-hero-ai flex-row">
                 <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
-                  <span style={{ fontSize: '0.95rem', color: 'var(--white)', fontWeight: 500, lineHeight: 1.2, margin: '2px 0 3px 0' }}>Chat with our AI</span>
-                  <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.2 }}>Get immediate answers 24/7</span>
+                  <span style={{ fontSize: '1.1rem', color: 'var(--white)', fontWeight: 500, lineHeight: 1.2, margin: '2px 0 3px 0' }}>Chat with our AI</span>
+                  <span style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.2 }}>Get immediate answers 24/7</span>
                 </div>
                 <div className="icon-wrap ml-3">
                   <Bot size={18} />
@@ -316,7 +316,7 @@ export default function App() {
           <div className="price-card">
             <div style={{ marginBottom: '1.5rem' }}><span className="price-tag" style={{ background: 'rgba(0,194,168,0.08)', padding: '6px 14px', borderRadius: '20px', display: 'inline-block', marginBottom: 0, color: 'var(--teal)' }}>Entry System</span></div>
             <h3>AI Conversion Layer</h3>
-            <p style={{fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '0.5rem'}}>Turn your existing website into a 24/7 patient conversion engine — without rebuilding it.</p>
+            <p style={{fontSize: '1rem', color: 'var(--text-muted)', marginTop: '0.5rem'}}>Turn your existing website into a 24/7 patient conversion engine — without rebuilding it.</p>
             <div className="price">$800<sub> setup</sub></div>
             <div className="price-note">then $400 / month</div>
             <div className="price-divider"></div>
@@ -335,7 +335,7 @@ export default function App() {
           <div className="price-card">
             <div style={{ marginBottom: '1.5rem' }}><span className="price-tag" style={{ background: 'rgba(0,194,168,0.08)', padding: '6px 14px', borderRadius: '20px', display: 'inline-block', marginBottom: 0, color: 'var(--teal)' }}>Foundation System</span></div>
             <h3>AI Patient Conversion System</h3>
-            <p style={{fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '0.5rem'}}>Turn your website into a 24/7 patient conversion engine.</p>
+            <p style={{fontSize: '1rem', color: 'var(--text-muted)', marginTop: '0.5rem'}}>Turn your website into a 24/7 patient conversion engine.</p>
             <div className="price">$1,500<sub> setup</sub></div>
             <div className="price-note">then $400 / month</div>
             <div className="price-divider"></div>
@@ -354,7 +354,7 @@ export default function App() {
           <div className="price-card">
             <div style={{ marginBottom: '1.5rem' }}><span className="price-tag" style={{ background: 'rgba(0,194,168,0.08)', padding: '6px 14px', borderRadius: '20px', display: 'inline-block', marginBottom: 0, color: 'var(--teal)' }}>Growth System</span></div>
             <h3>Patient Demand Engine</h3>
-            <p style={{fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '0.5rem'}}>Drive high-intent patients actively searching for treatment.</p>
+            <p style={{fontSize: '1rem', color: 'var(--text-muted)', marginTop: '0.5rem'}}>Drive high-intent patients actively searching for treatment.</p>
             <div className="price">$1,200<sub> setup</sub></div>
             <div className="price-note">then $800 / month + ad spend</div>
             <div className="price-divider"></div>
@@ -373,7 +373,7 @@ export default function App() {
           <div className="price-card featured">
             <div style={{ marginBottom: '1.5rem' }}><span className="price-tag" style={{ background: 'rgba(0,194,168,0.15)', padding: '6px 14px', borderRadius: '20px', display: 'inline-block', marginBottom: 0, color: 'var(--teal)' }}>Full Acquisition System</span></div>
             <h3>The Complete End-To-End System</h3>
-            <p style={{fontSize: '0.85rem', color: 'rgba(0,194,168,0.7)', marginTop: '0.5rem'}}>Attract, convert, and deliver booked patients automatically.</p>
+            <p style={{fontSize: '1rem', color: 'rgba(0,194,168,0.7)', marginTop: '0.5rem'}}>Attract, convert, and deliver booked patients automatically.</p>
             <div className="price">$2,500<sub> setup</sub></div>
             <div className="price-note">then $1,500 / month + ad spend</div>
             <div className="price-divider"></div>
@@ -405,7 +405,7 @@ export default function App() {
           <p style={{ fontSize: '1.2rem', color: 'var(--teal)', fontWeight: 500, fontFamily: 'var(--serif)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}><ChevronRight size={20} color="var(--teal)" className="shrink-0" /> Even 1–2 patients/month = massive ROI.</p>
         </div>
 
-        <p style={{textAlign: 'center', fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '2rem'}}>Ad spend is paid directly to Google/Meta by you. We charge only for management.</p>
+        <p style={{textAlign: 'center', fontSize: '0.95rem', color: 'var(--text-muted)', marginTop: '2rem'}}>Ad spend is paid directly to Google/Meta by you. We charge only for management.</p>
       </section>
 
       {/* TESTIMONIALS */}
@@ -553,7 +553,7 @@ export default function App() {
           <div style={{ background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(12px)', padding: '2rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.08)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '1rem' }}>
              <div className="problem-icon" style={{ margin: '0' }}><MessageCircle size={20} /></div>
              <h3 style={{ fontSize: '1.2rem', color: 'var(--white)' }}>Simple & Direct</h3>
-             <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', flex: 1 }}>Prefer a simple text or email? Reach out directly to our human team and we will reply instantly.</p>
+             <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', flex: 1 }}>Prefer a simple text or email? Reach out directly to our human team and we will reply instantly.</p>
              <div style={{ display: 'flex', flexDirection: 'column', width: '100%', gap: '0.75rem' }}>
                 <a href="https://wa.me/+2290192206612" target="_blank" rel="noreferrer" className="btn-contact-light-teal" style={{ width: '100%', padding: '0.8rem', gap: '8px' }}>
                    +2290192206612 <MessageCircle size={18} />
@@ -568,7 +568,7 @@ export default function App() {
           <div style={{ background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(12px)', padding: '2rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.08)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '1rem' }}>
              <div className="problem-icon" style={{ margin: '0' }}><Calendar size={20} /></div>
              <h3 style={{ fontSize: '1.2rem', color: 'var(--white)' }}>Book a Strategy Call</h3>
-             <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', flex: 1 }}>Pick a time that works for you. We'll run a live assessment of your current setup and show you the AI system in action.</p>
+             <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', flex: 1 }}>Pick a time that works for you. We'll run a live assessment of your current setup and show you the AI system in action.</p>
              <button onClick={() => alert('Strategy Call Booking (Calendly) would open here.')} className="btn-contact-light-teal" style={{ width: '100%', marginTop: 'auto' }}>
                Schedule Now <Calendar size={18} />
              </button>
@@ -578,7 +578,7 @@ export default function App() {
           <div style={{ background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(12px)', padding: '2rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.08)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '1rem' }}>
              <div className="problem-icon" style={{ margin: '0' }}><Bot size={20} /></div>
              <h3 style={{ fontSize: '1.2rem', color: 'var(--white)' }}>Ask AI Receptionist</h3>
-             <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', flex: 1 }}>Have a quick question about pricing or features? Ask our own AI Sales Agent for an instant answer right now.</p>
+             <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', flex: 1 }}>Have a quick question about pricing or features? Ask our own AI Sales Agent for an instant answer right now.</p>
              <button 
                 onClick={() => window.dispatchEvent(new Event('open-chatbot'))}
                 className="btn-contact-white" style={{ width: '100%', marginTop: 'auto' }}>
